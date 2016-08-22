@@ -75,14 +75,14 @@ extension RxExpectation {
 
 extension RxExpectation {
 
-    private func _assert<O: ObservableConvertibleType, E where E == O.E>(
-                         source: O,
-                         expectedEvents: [Recorded<Event<E>>],
-                         assertionBlock: (([Recorded<Event<E>>], [Recorded<Event<E>>]) -> RxAssertionResult<E>),
-                         filterNext: Bool,
-                         not: Bool,
-                         file: StaticString = #file,
-                         line: UInt = #line) {
+    func _assert<O: ObservableConvertibleType, E where E == O.E>(
+                 source: O,
+                 expectedEvents: [Recorded<Event<E>>],
+                 assertionBlock: (([Recorded<Event<E>>], [Recorded<Event<E>>]) -> RxAssertionResult<E>),
+                 filterNext: Bool,
+                 not: Bool,
+                 file: StaticString = #file,
+                 line: UInt = #line) {
         guard let testCase = self._testCase else { return }
         let recorder = self.scheduler.createObserver(E)
         let disposeBag = DisposeBag()
@@ -125,33 +125,38 @@ extension RxExpectation {
 
 extension RxExpectation {
 
-    // MARK: Private
+    // MARK: Internal
 
-    private func _assertEqual<O: ObservableConvertibleType, E: Equatable where E == O.E>(
+    func _eventEquals<E: Equatable>(lhs: Recorded<Event<E>>, _ rhs: Recorded<Event<E>>) -> Bool {
+        return (lhs.time == AnyTestTime || rhs.time == AnyTestTime || lhs.time == rhs.time) && lhs.value == rhs.value
+    }
+
+    func _eventsEqual<E: Equatable>(lhs: [Recorded<Event<E>>], _ rhs: [Recorded<Event<E>>]) -> Bool {
+        guard lhs.count == rhs.count else { return false }
+        for i in lhs.indices {
+            if !self._eventEquals(lhs[i], rhs[i]) {
+                return false
+            }
+        }
+        return true
+    }
+
+    func _assertEqual<O: ObservableConvertibleType, E: Equatable where E == O.E>(
                               source: O,
                               _ expectedEvents: [Recorded<Event<E>>],
                               filterNext: Bool,
                               not: Bool,
                               file: StaticString = #file,
                               line: UInt = #line) {
-        func isEqual(lhs: Recorded<Event<E>>, _ rhs: Recorded<Event<E>>) -> Bool {
-            return (lhs.time == AnyTestTime || rhs.time == AnyTestTime) && lhs.value == rhs.value
-        }
         self._assert(
             source,
             expectedEvents: expectedEvents,
             assertionBlock: { expectedEvents, recordedEvents in
-                let isCountEqual = expectedEvents.count == recordedEvents.count
-                let isValueEqual = !zip(expectedEvents, recordedEvents).lazy.contains { !isEqual($0, $1) }
-                let isSucceeded: Bool
-                if !not {
-                    isSucceeded = isCountEqual && isValueEqual
-                } else {
-                    isSucceeded = !isValueEqual
-                }
+                let eventsEqual = self._eventsEqual(expectedEvents, recordedEvents)
+                let isSucceeded = (!not && eventsEqual) || (not && !eventsEqual)
 
                 let expectedEventsDescription = String(expectedEvents)
-                .stringByReplacingOccurrencesOfString(String(AnyTestTime), withString: "any")
+                    .stringByReplacingOccurrencesOfString(String(AnyTestTime), withString: "any")
                 let message = "\(self._description ?? "")\n" +
                               "\t Expected: \(not ? "!" : "")\(expectedEventsDescription)\n" +
                               "\t Recorded: \(not ? " " : "")\(recordedEvents)"
