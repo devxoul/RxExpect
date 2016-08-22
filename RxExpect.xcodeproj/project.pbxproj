@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030BC48A1D6B777F00744138 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BC4891D6B777F00744138 /* Operators.swift */; };
+		030BC48C1D6B779C00744138 /* AnyTestTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BC48B1D6B779C00744138 /* AnyTestTime.swift */; };
+		030BC48E1D6B782200744138 /* RxAssertionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BC48D1D6B782200744138 /* RxAssertionResult.swift */; };
 		0312B3B01D594E9D00603A75 /* RxExpect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FB83061D592F6B004EF4FB /* RxExpect.framework */; };
 		03FB83261D59301F004EF4FB /* RxExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FB83211D59301F004EF4FB /* RxExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03FB832B1D5930A8004EF4FB /* RxExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB83291D5930A8004EF4FB /* RxExpectation.swift */; };
@@ -27,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		030BC4891D6B777F00744138 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		030BC48B1D6B779C00744138 /* AnyTestTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyTestTime.swift; sourceTree = "<group>"; };
+		030BC48D1D6B782200744138 /* RxAssertionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAssertionResult.swift; sourceTree = "<group>"; };
 		03FB83061D592F6B004EF4FB /* RxExpect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxExpect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03FB83101D592F6B004EF4FB /* RxExpectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxExpectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03FB83211D59301F004EF4FB /* RxExpect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxExpect.h; sourceTree = "<group>"; };
@@ -90,6 +96,9 @@
 				03FB83211D59301F004EF4FB /* RxExpect.h */,
 				03FB832A1D5930A8004EF4FB /* RxTestCase.swift */,
 				03FB83291D5930A8004EF4FB /* RxExpectation.swift */,
+				030BC48D1D6B782200744138 /* RxAssertionResult.swift */,
+				030BC4891D6B777F00744138 /* Operators.swift */,
+				030BC48B1D6B779C00744138 /* AnyTestTime.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -323,6 +332,9 @@
 			files = (
 				03FB832B1D5930A8004EF4FB /* RxExpectation.swift in Sources */,
 				03FB832C1D5930A8004EF4FB /* RxTestCase.swift in Sources */,
+				030BC48E1D6B782200744138 /* RxAssertionResult.swift in Sources */,
+				030BC48A1D6B777F00744138 /* Operators.swift in Sources */,
+				030BC48C1D6B779C00744138 /* AnyTestTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

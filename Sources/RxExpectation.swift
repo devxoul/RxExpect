@@ -78,8 +78,9 @@ extension RxExpectation {
     private func _assert<O: ObservableConvertibleType, E where E == O.E>(
                          source: O,
                          expectedEvents: [Recorded<Event<E>>],
-                         recordedEventFilter: Recorded<Event<E>> -> Bool,
-                         condition: ((Recorded<Event<E>>, Recorded<Event<E>>) -> Bool),
+                         assertionBlock: (([Recorded<Event<E>>], [Recorded<Event<E>>]) -> RxAssertionResult<E>),
+                         filterNext: Bool,
+                         not: Bool,
                          file: StaticString = #file,
                          line: UInt = #line) {
         guard let testCase = self._testCase else { return }
@@ -101,47 +102,20 @@ extension RxExpectation {
 
         testCase.waitForExpectationsWithTimeout(0.5) { error in
             XCTAssertEqual(error, nil, file: file, line: line)
-            let recordedEvents = recorder.events.filter(recordedEventFilter)
-            let isCountEqual = expectedEvents.count == recordedEvents.count
-            let isValueEqual = !zip(expectedEvents, recordedEvents).lazy.contains { !condition($0, $1) }
-            let isSucceeded = isCountEqual && isValueEqual
-
-            let expectedEventsDescription = String(expectedEvents)
-                .stringByReplacingOccurrencesOfString(String(AnyTestTime), withString: "any")
-            let message = "\(self._description ?? "")\n" +
-                          "\t Expected: \(expectedEventsDescription)\n" +
-                          "\t Recorded: \(recordedEvents)"
-            XCTAssert(isSucceeded, message, file: file, line: line)
-        }
-    }
-
-    public func assert<O: ObservableConvertibleType, E where E == O.E>(
-                       source: O,
-                       _ expectedEvents: [Recorded<Event<E>>],
-                       _ condition: ((Recorded<Event<E>>, Recorded<Event<E>>) -> Bool),
-                       file: StaticString = #file,
-                       line: UInt = #line) {
-        // filter all
-        let recordedEventFilter: Recorded<Event<E>> -> Bool = { _ in true }
-        self._assert(source, expectedEvents: expectedEvents, recordedEventFilter: recordedEventFilter,
-                     condition: condition, file: file, line: line)
-    }
-
-    public func assertNext<O: ObservableConvertibleType, E where E == O.E>(
-                           source: O,
-                           _ expectedEvents: [Recorded<Event<E>>],
-                           _ condition: ((Recorded<Event<E>>, Recorded<Event<E>>) -> Bool),
-                           file: StaticString = #file,
-                           line: UInt = #line) {
-        // filter only `.Next` events
-        let recordedEventFilter: Recorded<Event<E>> -> Bool = { event in
-            if case .Next = event.value {
-                return true
+            let recordedEvents: [Recorded<Event<E>>]
+            if !filterNext {
+                recordedEvents = recorder.events
+            } else {
+                recordedEvents = recorder.events.filter { event in
+                    if case .Next = event.value {
+                        return true
+                    }
+                    return false
+                }
             }
-            return false
+            let result = assertionBlock(expectedEvents, recordedEvents)
+            XCTAssert(result.isSucceeded, result.failureMessage, file: file, line: line)
         }
-        self._assert(source, expectedEvents: expectedEvents, recordedEventFilter: recordedEventFilter,
-                     condition: condition, file: file, line: line)
     }
 
 }
@@ -151,6 +125,50 @@ extension RxExpectation {
 
 extension RxExpectation {
 
+    // MARK: Private
+
+    private func _assertEqual<O: ObservableConvertibleType, E: Equatable where E == O.E>(
+                              source: O,
+                              _ expectedEvents: [Recorded<Event<E>>],
+                              filterNext: Bool,
+                              not: Bool,
+                              file: StaticString = #file,
+                              line: UInt = #line) {
+        func isEqual(lhs: Recorded<Event<E>>, _ rhs: Recorded<Event<E>>) -> Bool {
+            return (lhs.time == AnyTestTime || rhs.time == AnyTestTime) && lhs.value == rhs.value
+        }
+        self._assert(
+            source,
+            expectedEvents: expectedEvents,
+            assertionBlock: { expectedEvents, recordedEvents in
+                let isCountEqual = expectedEvents.count == recordedEvents.count
+                let isValueEqual = !zip(expectedEvents, recordedEvents).lazy.contains { !isEqual($0, $1) }
+                let isSucceeded: Bool
+                if !not {
+                    isSucceeded = isCountEqual && isValueEqual
+                } else {
+                    isSucceeded = !isValueEqual
+                }
+
+                let expectedEventsDescription = String(expectedEvents)
+                .stringByReplacingOccurrencesOfString(String(AnyTestTime), withString: "any")
+                let message = "\(self._description ?? "")\n" +
+                              "\t Expected: \(not ? "!" : "")\(expectedEventsDescription)\n" +
+                              "\t Recorded: \(not ? " " : "")\(recordedEvents)"
+
+                return RxAssertionResult(expectedEvents: expectedEvents,
+                                         recordedEvents: recordedEvents,
+                                         isSucceeded: isSucceeded,
+                                         failureMessage: message)
+            },
+            filterNext: filterNext,
+            not: false,
+            file: file,
+            line: line
+        )
+    }
+
+
     // MARK: with Equatable Events
 
     public func assertEqual<O: ObservableConvertibleType, E: Equatable where E == O.E>(
@@ -158,10 +176,7 @@ extension RxExpectation {
                             _ expectedEvents: [Recorded<Event<E>>],
                             file: StaticString = #file,
                             line: UInt = #line) {
-        let condition: (Recorded<Event<E>>, Recorded<Event<E>>) -> Bool = { lhs, rhs in
-            return (lhs.time == AnyTestTime || rhs.time == AnyTestTime) && lhs.value == rhs.value
-        }
-        self.assert(source, expectedEvents, condition, file: file, line: line)
+        self._assertEqual(source, expectedEvents, filterNext: false, not: false, file: file, line: line)
     }
 
     public func assertNextEqual<O: ObservableConvertibleType, E: Equatable where E == O.E>(
@@ -169,27 +184,7 @@ extension RxExpectation {
                                 _ expectedEvents: [Recorded<Event<E>>],
                                 file: StaticString = #file,
                                 line: UInt = #line) {
-        let eventCondition: (Recorded<Event<E>>, Recorded<Event<E>>) -> Bool = { lhs, rhs in
-            return (lhs.time == AnyTestTime || rhs.time == AnyTestTime) && lhs.value == rhs.value
-        }
-        self.assertNext(source, expectedEvents, eventCondition, file: file, line: line)
-    }
-
-
-    // MARK: with Elements
-
-    public func assertNextEqual<O: ObservableConvertibleType, E where E == O.E>(
-                                source: O,
-                                _ expectedElements: [E],
-                                _ condition: ((E, E) -> Bool),
-                                file: StaticString = #file,
-                                line: UInt = #line) {
-        let expectedEvents = expectedElements.map { Recorded(time: AnyTestTime, event: Event.Next($0)) }
-        let eventCondition: (Recorded<Event<E>>, Recorded<Event<E>>) -> Bool = { lhs, rhs in
-            guard let leftElement = lhs.value.element, rightElement = rhs.value.element else { return false }
-            return condition(leftElement, rightElement)
-        }
-        self.assertNext(source, expectedEvents, eventCondition, file: file, line: line)
+        self._assertEqual(source, expectedEvents, filterNext: true, not: false, file: file, line: line)
     }
 
 
@@ -218,10 +213,7 @@ extension RxExpectation {
                                _ expectedEvents: [Recorded<Event<E>>],
                                file: StaticString = #file,
                                line: UInt = #line) {
-        let condition: (Recorded<Event<E>>, Recorded<Event<E>>) -> Bool = { lhs, rhs in
-            return (lhs.time != AnyTestTime && rhs.time != AnyTestTime) || lhs.value != rhs.value
-        }
-        self.assert(source, expectedEvents, condition, file: file, line: line)
+        self._assertEqual(source, expectedEvents, filterNext: false, not: true, file: file, line: line)
     }
 
     public func assertNextNotEqual<O: ObservableConvertibleType, E: Equatable where E == O.E>(
@@ -229,27 +221,7 @@ extension RxExpectation {
                                    _ expectedEvents: [Recorded<Event<E>>],
                                    file: StaticString = #file,
                                    line: UInt = #line) {
-        let condition: (Recorded<Event<E>>, Recorded<Event<E>>) -> Bool = { lhs, rhs in
-            return (lhs.time != AnyTestTime && rhs.time != AnyTestTime) || lhs.value != rhs.value
-        }
-        self.assertNext(source, expectedEvents, condition, file: file, line: line)
-    }
-
-
-    // MARK: with Elements
-
-    public func assertNextNotEqual<O: ObservableConvertibleType, E where E == O.E>(
-                                   source: O,
-                                   _ expectedElements: [E],
-                                   _ condition: ((E, E) -> Bool),
-                                   file: StaticString = #file,
-                                   line: UInt = #line) {
-        let expectedEvents = expectedElements.map { Recorded(time: AnyTestTime, event: Event.Next($0)) }
-        let eventCondition: (Recorded<Event<E>>, Recorded<Event<E>>) -> Bool = { lhs, rhs in
-            guard let leftElement = lhs.value.element, rightElement = rhs.value.element else { return false }
-            return !condition(leftElement, rightElement)
-        }
-        self.assertNext(source, expectedEvents, eventCondition, file: file, line: line)
+        self._assertEqual(source, expectedEvents, filterNext: true, not: true, file: file, line: line)
     }
 
 
@@ -264,27 +236,4 @@ extension RxExpectation {
         self.assertNextNotEqual(source, events, file: file, line: line)
     }
 
-}
-
-
-// MARK: - AnyTestTime
-
-let AnyTestTime = TestTime.min
-
-public func next<T>(element: T) -> Recorded<Event<T>> {
-    return next(AnyTestTime, element)
-}
-
-
-// MARK: Operators
-
-public func != <Element: Equatable>(lhs: Event<Element>, rhs: Event<Element>) -> Bool {
-    return !(lhs == rhs)
-}
-
-public func == <Element: Equatable>(lhs: Event<Element>?, rhs: Event<Element>?) -> Bool {
-    if let lhs = lhs, rhs = rhs {
-        return lhs == rhs
-    }
-    return false
 }
