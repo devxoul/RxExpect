@@ -26,22 +26,7 @@ import RxCocoa
 import RxSwift
 import RxTests
 
-public class RxTestCase: XCTestCase {
-
-    public var disposeBag: DisposeBag!
-
-    override public func setUp() {
-        super.setUp()
-        self.disposeBag = DisposeBag()
-    }
-
-    override public func tearDown() {
-        self.disposeBag = nil
-        super.tearDown()
-    }
-
-
-    // MARK: RxExpect
+public extension XCTestCase {
 
     public func RxExpect(description: String? = nil, block: RxExpectation -> Void) {
         let test = RxExpectation(self, description: description)

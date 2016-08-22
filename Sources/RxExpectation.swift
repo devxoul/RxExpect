@@ -31,14 +31,14 @@ import RxTests
 
 public class RxExpectation: XCTest {
 
-    private weak var _testCase: RxTestCase?
+    private weak var _testCase: XCTestCase?
     private var _description: String?
 
     let scheduler = TestScheduler(initialClock: 0)
     private var _inputDisposables: [Disposable] = []
     private var _lastTime: TestTime = TestTime.min
 
-    public init(_ testCase: RxTestCase, description: String? = nil) {
+    public init(_ testCase: XCTestCase, description: String? = nil) {
         self._testCase = testCase
         self._description = description
     }
