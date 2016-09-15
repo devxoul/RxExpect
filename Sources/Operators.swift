@@ -28,7 +28,7 @@ public func != <Element: Equatable>(lhs: Event<Element>, rhs: Event<Element>) ->
 }
 
 public func == <Element: Equatable>(lhs: Event<Element>?, rhs: Event<Element>?) -> Bool {
-    if let lhs = lhs, rhs = rhs {
+    if let lhs = lhs, let rhs = rhs {
         return lhs == rhs
     }
     return false
