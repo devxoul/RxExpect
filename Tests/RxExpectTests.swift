@@ -25,8 +25,8 @@ import XCTest
 
 class RxExpectTests: XCTestCase {
 
-    func testSuccess() {
-        XCTAssertTrue(true)
-    }
+  func testSuccess() {
+    XCTAssertTrue(true)
+  }
 
 }

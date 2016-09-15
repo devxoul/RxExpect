@@ -24,12 +24,12 @@ import RxSwift
 import RxTest
 
 public func != <Element: Equatable>(lhs: Event<Element>, rhs: Event<Element>) -> Bool {
-    return !(lhs == rhs)
+  return !(lhs == rhs)
 }
 
 public func == <Element: Equatable>(lhs: Event<Element>?, rhs: Event<Element>?) -> Bool {
-    if let lhs = lhs, let rhs = rhs {
-        return lhs == rhs
-    }
-    return false
+  if let lhs = lhs, let rhs = rhs {
+    return lhs == rhs
+  }
+  return false
 }
