@@ -213,7 +213,7 @@ extension RxExpectation {
     file: StaticString = #file,
     line: UInt = #line
   ) where E == O.E {
-    let events = expectedElements.map { Recorded(time: AnyTestTime, event: Event.next($0)) }
+    let events = expectedElements.map { Recorded(time: AnyTestTime, value: Event.next($0)) }
     self.assertNextEqual(source, events, file: file, line: line)
   }
 
@@ -253,7 +253,7 @@ extension RxExpectation {
     file: StaticString = #file,
     line: UInt = #line
   ) where E == O.E {
-    let events = expectedElements.map { Recorded(time: AnyTestTime, event: Event.next($0)) }
+    let events = expectedElements.map { Recorded(time: AnyTestTime, value: Event.next($0)) }
     self.assertNextNotEqual(source, events, file: file, line: line)
   }
 
