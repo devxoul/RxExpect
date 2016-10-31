@@ -17,5 +17,5 @@ Pod::Spec.new do |s|
   
   s.dependency "RxSwift", ">= 3.0"
   s.dependency "RxCocoa", ">= 3.0"
-  s.dependency "RxTests", ">= 3.0"
+  s.dependency "RxTest", ">= 3.0"
 end
