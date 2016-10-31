@@ -1,9 +1,9 @@
 target 'RxExpect' do
   use_frameworks!
 
-  pod 'RxSwift', '~> 2.5'
-  pod 'RxCocoa', '~> 2.5'
-  pod 'RxTests', '~> 2.5'
+  pod 'RxSwift', '>= 3.0'
+  pod 'RxCocoa', '>= 3.0'
+  pod 'RxTest', '>= 3.0'
 
   target 'RxExpectTests'
 end

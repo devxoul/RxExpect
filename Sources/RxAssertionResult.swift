@@ -21,11 +21,11 @@
 // SOFTWARE.
 
 import RxSwift
-import RxTests
+import RxTest
 
 struct RxAssertionResult<E> {
-    var expectedEvents: [Recorded<Event<E>>]
-    var recordedEvents: [Recorded<Event<E>>]
-    var isSucceeded: Bool
-    var failureMessage: String
+  var expectedEvents: [Recorded<Event<E>>]
+  var recordedEvents: [Recorded<Event<E>>]
+  var isSucceeded: Bool
+  var failureMessage: String
 }

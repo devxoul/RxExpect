@@ -24,14 +24,14 @@ import XCTest
 
 import RxCocoa
 import RxSwift
-import RxTests
+import RxTest
 
 public extension XCTestCase {
 
-    public func RxExpect(description: String? = nil, block: RxExpectation -> Void) {
-        let test = RxExpectation(self, description: description)
-        driveOnScheduler(test.scheduler) {
-            block(test)
-        }
+  public func RxExpect(_ description: String? = nil, block: @escaping (RxExpectation) -> Void) {
+    let test = RxExpectation(self, description: description)
+    driveOnScheduler(test.scheduler) {
+      block(test)
     }
+  }
 }
