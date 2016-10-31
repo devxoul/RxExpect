@@ -21,7 +21,7 @@
 // SOFTWARE.
 
 import RxSwift
-import RxTests
+import RxTest
 
 public func != <Element: Equatable>(lhs: Event<Element>, rhs: Event<Element>) -> Bool {
     return !(lhs == rhs)

@@ -24,7 +24,7 @@ import XCTest
 
 import RxCocoa
 import RxSwift
-import RxTests
+import RxTest
 
 public extension XCTestCase {
 

@@ -21,7 +21,7 @@
 // SOFTWARE.
 
 import RxSwift
-import RxTests
+import RxTest
 
 struct RxAssertionResult<E> {
     var expectedEvents: [Recorded<Event<E>>]
