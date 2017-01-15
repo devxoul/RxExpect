@@ -28,10 +28,16 @@ import RxTest
 
 public extension XCTestCase {
 
-  public func RxExpect(_ description: String? = nil, block: @escaping (RxExpectation) -> Void) {
-    let test = RxExpectation(self, description: description)
+  public func RxExpect(_ message: String? = nil, block: @escaping (RxExpectation) -> Void) {
+    let test = RxExpectation(self, message: message)
     driveOnScheduler(test.scheduler) {
       block(test)
     }
   }
+}
+
+
+/// Shortcut method for `next(time, Void())`
+public func next(_ time: TestTime) -> Recorded<Event<Void>> {
+  return Recorded(time: time, value: .next(Void()))
 }
