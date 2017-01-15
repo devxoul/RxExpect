@@ -27,12 +27,13 @@ func testMultiply() {
     ])
     
     // test output
-    test.assertEqual(result, [
-      next(2),
-      next(4),
-      next(6),
-      completed(400)
-    ])
+    test.assert(result)
+      .equal([
+        next(2),
+        next(4),
+        next(6),
+        completed(400)
+      ])
   }
 }
 ```
@@ -56,14 +57,14 @@ final class ArticleDetailViewModelTests: RxTestCase {
 
       // providing an user input: user tapped like button
       test.input(viewModel.likeButtonDidTap, [
-        next(100, Void()), // next(time, value)
+        next(100),
       ])
 
       // test output: like button become selected
-      test.assertEqual(viewModel.likeButtonSelected, [
-        next(false), // initial state
-        next(true),  // should become true
-      ])
+      test.assert(viewModel.isLikeButtonSelected)
+        .filterNext()
+        .since(100)
+        .equal([true])
     }
     
     RxExpect("like button should become unselected when like button tapped") { test in
@@ -71,14 +72,14 @@ final class ArticleDetailViewModelTests: RxTestCase {
 
       // providing an user input: user tapped like button
       test.input(viewModel.likeButtonDidTap, [
-        next(100, Void()),
+        next(100),
       ])
 
       // test output: like button become selected
-      test.assertEqual(viewModel.likeButtonSelected, [
-        next(true),  // initial state
-        next(false), // should become false
-      ])
+      test.assert(viewModel.isLikeButtonSelected)
+        .filterNext()
+        .since(100)
+        .equal([false])
     }
   }
 
@@ -96,17 +97,26 @@ final class ArticleDetailViewModelTests: RxTestCase {
 * `input(observer, events)`
 * `input(variable, events)`
 
+#### Start Assertion Chaining
+
+* `assert(source)`
+
+#### Filtering Events
+
+* `filterNext()`
+* `since(timeSince)`
+* `until(timeUntil)`
+* `within(timeRange)`
+
 #### Assert Equal
 
-* `assertEqual(source, expectedEvents)`
-* `assertNextEqual(source, expectedEvents)`
-* `assertNextEqual(source, expectedElements)`
+* `equal(expectedEvents)`
+* `notEqual(expectedEvents)`
 
-#### Assert Not Equal
+#### Assert Empty
 
-* `assertNotEqual(source, expectedEvents)`
-* `assertNextNotEqual(source, expectedEvents)`
-* `assertNextNotEqual(source, expectedElements)`
+* `isEmpty()`
+* `isNotEmpty()`
 
 ## Installation
 
