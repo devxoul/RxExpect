@@ -123,13 +123,13 @@ final class ArticleDetailViewModelTests: RxTestCase {
 - **For iOS 8+ projects** with [CocoaPods](https://cocoapods.org):
 
     ```ruby
-    pod 'RxExpect', '~> 0.3'
+    pod 'RxExpect', '~> 0.4'
     ```
 
 - **For iOS 8+ projects** with [Carthage](https://github.com/Carthage/Carthage):
 
     ```
-    github "devxoul/RxExpect" ~> 0.3
+    github "devxoul/RxExpect" ~> 0.4
     ```
 
 ## License
