@@ -146,6 +146,32 @@ extension RxAssertion {
     }
     return true
   }
+  
+  func eventEquals<E: Sequence>(_ lhs: Recorded<Event<E>>, _ rhs: Recorded<Event<E>>) -> Bool where E.Iterator.Element: Equatable {
+
+    let equals: Bool
+    switch(lhs.value.element, rhs.value.element) {
+    case (let left?, let right?):
+      equals = left.elementsEqual(right)
+    case (.none, .none):
+      equals = true
+    default:
+      equals = false
+    }
+    
+    return (lhs.time == AnyTestTime || rhs.time == AnyTestTime || lhs.time == rhs.time) && equals
+  }
+  
+  func eventsEqual<E: Sequence>(_ lhs: [Recorded<Event<E>>], _ rhs: [Recorded<Event<E>>]) -> Bool where E.Iterator.Element: Equatable {
+    guard lhs.count == rhs.count else { return false }
+    for i in lhs.indices {
+      if !self.eventEquals(lhs[i], rhs[i]) {
+        return false
+      }
+    }
+    return true
+  }
+
 }
 
 
@@ -189,5 +215,32 @@ extension RxAssertion {
     self.assert([], file: file, line: line) { expectedEvents, recordedEvents in
       return !recordedEvents.isEmpty
     }
+  }
+}
+
+// MARK: - Sequence equal
+
+extension RxAssertion where O.E: Sequence, O.E.Iterator.Element: Equatable {
+  
+  public func equal(_ expectedEvents: [Recorded<Event<O.E>>], file: StaticString = #file, line: UInt = #line) {
+    self.assert(expectedEvents, file: file, line: line) { expectedEvents, recordedEvents in
+      return self.eventsEqual(expectedEvents, recordedEvents)
+    }
+  }
+  
+  public func equal(_ expectedElements: [O.E], file: StaticString = #file, line: UInt = #line) {
+    let expectedEvents = expectedElements.map { Recorded(time: AnyTestTime, value: Event.next($0)) }
+    self.equal(expectedEvents, file: file, line: line)
+  }
+  
+  public func notEqual(_ expectedEvents: [Recorded<Event<O.E>>], file: StaticString = #file, line: UInt = #line) {
+    self.assert(expectedEvents, file: file, line: line) { expectedEvents, recordedEvents in
+      return !self.eventsEqual(expectedEvents, recordedEvents)
+    }
+  }
+  
+  public func notEqual(_ expectedElements: [O.E], file: StaticString = #file, line: UInt = #line) {
+    let expectedEvents = expectedElements.map { Recorded(time: AnyTestTime, value: Event.next($0)) }
+    self.notEqual(expectedEvents, file: file, line: line)
   }
 }
