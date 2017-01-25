@@ -108,15 +108,15 @@ final class ArticleDetailViewModelTests: RxTestCase {
 * `until(timeUntil)`
 * `within(timeRange)`
 
-#### Assert Equal
+#### Reversing Result
+
+* `not()`
+
+#### Assertions
 
 * `equal(expectedEvents)`
-* `notEqual(expectedEvents)`
-
-#### Assert Empty
-
 * `isEmpty()`
-* `isNotEmpty()`
+* `contains()`
 
 ## Installation
 
@@ -131,6 +131,15 @@ final class ArticleDetailViewModelTests: RxTestCase {
     ```
     github "devxoul/RxExpect" ~> 0.4
     ```
+
+## Development
+
+```console
+$ git clone https://github.com/devxoul/RxExpect
+$ cd RxExpect
+$ carthage checkout --no-use-binaries
+$ open RxExpect.xcworkspace
+```
 
 ## License
 
