@@ -13,6 +13,8 @@
 		0382322B1E2BF96D0022E1CE /* RxAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0382322A1E2BF96D0022E1CE /* RxAssertion.swift */; };
 		03870B4B1E35F239003F4941 /* RxAssertion+Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03870B4A1E35F239003F4941 /* RxAssertion+Equal.swift */; };
 		03870B4D1E35F2B3003F4941 /* RxAssertion+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03870B4C1E35F2B3003F4941 /* RxAssertion+Empty.swift */; };
+		03A34ABE1E38EA6800D183D6 /* RxAssertion+Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A34ABD1E38EA6800D183D6 /* RxAssertion+Contain.swift */; };
+		03A34ABF1E38EA6B00D183D6 /* RxAssertionContainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A34AB91E38EA4C00D183D6 /* RxAssertionContainTests.swift */; };
 		03CDC36E1E38D3C300A5F554 /* RxAssertionEmptyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDC36C1E38D1C800A5F554 /* RxAssertionEmptyTests.swift */; };
 		03FB83261D59301F004EF4FB /* RxExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FB83211D59301F004EF4FB /* RxExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03FB832B1D5930A8004EF4FB /* RxExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB83291D5930A8004EF4FB /* RxExpectation.swift */; };
@@ -38,6 +40,8 @@
 		0382322A1E2BF96D0022E1CE /* RxAssertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAssertion.swift; sourceTree = "<group>"; };
 		03870B4A1E35F239003F4941 /* RxAssertion+Equal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxAssertion+Equal.swift"; sourceTree = "<group>"; };
 		03870B4C1E35F2B3003F4941 /* RxAssertion+Empty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxAssertion+Empty.swift"; sourceTree = "<group>"; };
+		03A34AB91E38EA4C00D183D6 /* RxAssertionContainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAssertionContainTests.swift; sourceTree = "<group>"; };
+		03A34ABD1E38EA6800D183D6 /* RxAssertion+Contain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxAssertion+Contain.swift"; sourceTree = "<group>"; };
 		03CDC36C1E38D1C800A5F554 /* RxAssertionEmptyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAssertionEmptyTests.swift; sourceTree = "<group>"; };
 		03FB83061D592F6B004EF4FB /* RxExpect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxExpect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03FB83101D592F6B004EF4FB /* RxExpectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxExpectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +109,7 @@
 				0382322A1E2BF96D0022E1CE /* RxAssertion.swift */,
 				03870B4A1E35F239003F4941 /* RxAssertion+Equal.swift */,
 				03870B4C1E35F2B3003F4941 /* RxAssertion+Empty.swift */,
+				03A34ABD1E38EA6800D183D6 /* RxAssertion+Contain.swift */,
 				030BC4891D6B777F00744138 /* Operators.swift */,
 				030BC48B1D6B779C00744138 /* AnyTestTime.swift */,
 			);
@@ -124,6 +129,7 @@
 			children = (
 				03FB83251D59301F004EF4FB /* RxAssertionEqualTests.swift */,
 				03CDC36C1E38D1C800A5F554 /* RxAssertionEmptyTests.swift */,
+				03A34AB91E38EA4C00D183D6 /* RxAssertionContainTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -342,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0382322B1E2BF96D0022E1CE /* RxAssertion.swift in Sources */,
+				03A34ABE1E38EA6800D183D6 /* RxAssertion+Contain.swift in Sources */,
 				03FB832B1D5930A8004EF4FB /* RxExpectation.swift in Sources */,
 				03FB832C1D5930A8004EF4FB /* XCTestCase+RxExpect.swift in Sources */,
 				03870B4B1E35F239003F4941 /* RxAssertion+Equal.swift in Sources */,
@@ -357,6 +364,7 @@
 			files = (
 				03FB832D1D5930EF004EF4FB /* RxAssertionEqualTests.swift in Sources */,
 				03CDC36E1E38D3C300A5F554 /* RxAssertionEmptyTests.swift in Sources */,
+				03A34ABF1E38EA6B00D183D6 /* RxAssertionContainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
