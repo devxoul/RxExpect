@@ -29,7 +29,7 @@ struct NonEquatable {
   let name: String
 }
 
-class RxAssertionEqualityTests: XCTestCase {
+class RxAssertionEqualTests: XCTestCase {
 
   // MARK: Equality Assertion (Non Equatable)
 

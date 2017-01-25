@@ -1,5 +1,5 @@
 //
-//  RxAssertionEmptinessTests.swift
+//  RxAssertionEmptyTests.swift
 //  RxExpect
 //
 //  Created by Suyeol Jeon on 25/01/2017.
@@ -11,7 +11,7 @@ import RxSwift
 import RxTest
 import RxExpect
 
-final class RxAssertionEmptinessTests: XCTestCase {
+final class RxAssertionEmptyTests: XCTestCase {
 
   func testAssertEmpty() {
     RxExpect("it should assert emptiness") { test in
