@@ -19,6 +19,38 @@
 		03DCCED81E390352007F2515 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCED51E390352007F2515 /* RxCocoa.framework */; };
 		03DCCED91E390352007F2515 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCED61E390352007F2515 /* RxSwift.framework */; };
 		03DCCEDA1E390352007F2515 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCED71E390352007F2515 /* RxTest.framework */; };
+		03DCCEE91E3903D5007F2515 /* RxExpect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCEE01E3903D5007F2515 /* RxExpect.framework */; };
+		03DCCEF91E3903F4007F2515 /* XCTestCase+RxExpect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB832A1D5930A8004EF4FB /* XCTestCase+RxExpect.swift */; };
+		03DCCEFA1E3903F4007F2515 /* RxExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB83291D5930A8004EF4FB /* RxExpectation.swift */; };
+		03DCCEFB1E3903F4007F2515 /* RxAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0382322A1E2BF96D0022E1CE /* RxAssertion.swift */; };
+		03DCCEFC1E3903F4007F2515 /* RxAssertion+Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03870B4A1E35F239003F4941 /* RxAssertion+Equal.swift */; };
+		03DCCEFD1E3903F4007F2515 /* RxAssertion+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03870B4C1E35F2B3003F4941 /* RxAssertion+Empty.swift */; };
+		03DCCEFE1E3903F4007F2515 /* RxAssertion+Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A34ABD1E38EA6800D183D6 /* RxAssertion+Contain.swift */; };
+		03DCCEFF1E3903F4007F2515 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BC4891D6B777F00744138 /* Operators.swift */; };
+		03DCCF001E3903F4007F2515 /* AnyTestTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BC48B1D6B779C00744138 /* AnyTestTime.swift */; };
+		03DCCF011E3903F9007F2515 /* RxExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FB83211D59301F004EF4FB /* RxExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		03DCCF021E3903FF007F2515 /* RxAssertionEqualTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB83251D59301F004EF4FB /* RxAssertionEqualTests.swift */; };
+		03DCCF031E3903FF007F2515 /* RxAssertionEmptyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDC36C1E38D1C800A5F554 /* RxAssertionEmptyTests.swift */; };
+		03DCCF041E3903FF007F2515 /* RxAssertionContainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A34AB91E38EA4C00D183D6 /* RxAssertionContainTests.swift */; };
+		03DCCF081E390442007F2515 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCF051E390442007F2515 /* RxCocoa.framework */; };
+		03DCCF091E390442007F2515 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCF061E390442007F2515 /* RxSwift.framework */; };
+		03DCCF0A1E390442007F2515 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCF071E390442007F2515 /* RxTest.framework */; };
+		03DCCF191E39048B007F2515 /* RxExpect-tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCF101E39048B007F2515 /* RxExpect-tvOS.framework */; };
+		03DCCF2C1E3904C4007F2515 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCF291E3904C4007F2515 /* RxCocoa.framework */; };
+		03DCCF2D1E3904C4007F2515 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCF2A1E3904C4007F2515 /* RxSwift.framework */; };
+		03DCCF2E1E3904C4007F2515 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCF2B1E3904C4007F2515 /* RxTest.framework */; };
+		03DCCF2F1E3904C9007F2515 /* RxExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FB83211D59301F004EF4FB /* RxExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		03DCCF301E3904D2007F2515 /* RxAssertionEqualTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB83251D59301F004EF4FB /* RxAssertionEqualTests.swift */; };
+		03DCCF311E3904D2007F2515 /* RxAssertionEmptyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDC36C1E38D1C800A5F554 /* RxAssertionEmptyTests.swift */; };
+		03DCCF321E3904D2007F2515 /* RxAssertionContainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A34AB91E38EA4C00D183D6 /* RxAssertionContainTests.swift */; };
+		03DCCF331E3904D8007F2515 /* XCTestCase+RxExpect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB832A1D5930A8004EF4FB /* XCTestCase+RxExpect.swift */; };
+		03DCCF341E3904D8007F2515 /* RxExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB83291D5930A8004EF4FB /* RxExpectation.swift */; };
+		03DCCF351E3904D8007F2515 /* RxAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0382322A1E2BF96D0022E1CE /* RxAssertion.swift */; };
+		03DCCF361E3904D8007F2515 /* RxAssertion+Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03870B4A1E35F239003F4941 /* RxAssertion+Equal.swift */; };
+		03DCCF371E3904D8007F2515 /* RxAssertion+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03870B4C1E35F2B3003F4941 /* RxAssertion+Empty.swift */; };
+		03DCCF381E3904D8007F2515 /* RxAssertion+Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A34ABD1E38EA6800D183D6 /* RxAssertion+Contain.swift */; };
+		03DCCF391E3904D8007F2515 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BC4891D6B777F00744138 /* Operators.swift */; };
+		03DCCF3A1E3904D8007F2515 /* AnyTestTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BC48B1D6B779C00744138 /* AnyTestTime.swift */; };
 		03FB83261D59301F004EF4FB /* RxExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FB83211D59301F004EF4FB /* RxExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03FB832B1D5930A8004EF4FB /* RxExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB83291D5930A8004EF4FB /* RxExpectation.swift */; };
 		03FB832C1D5930A8004EF4FB /* XCTestCase+RxExpect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB832A1D5930A8004EF4FB /* XCTestCase+RxExpect.swift */; };
@@ -26,6 +58,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		03DCCEEA1E3903D5007F2515 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03FB82FD1D592F6B004EF4FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03DCCEDF1E3903D5007F2515;
+			remoteInfo = "RxExpect-macOS";
+		};
+		03DCCF1A1E39048B007F2515 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03FB82FD1D592F6B004EF4FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03DCCF0F1E39048B007F2515;
+			remoteInfo = "RxExpect-tvOS";
+		};
 		03FB83121D592F6B004EF4FB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 03FB82FD1D592F6B004EF4FB /* Project object */;
@@ -47,16 +93,64 @@
 		03DCCED51E390352007F2515 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-iphoneos/RxCocoa.framework"; sourceTree = "<group>"; };
 		03DCCED61E390352007F2515 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-iphoneos/RxSwift.framework"; sourceTree = "<group>"; };
 		03DCCED71E390352007F2515 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-iphoneos/RxTest.framework"; sourceTree = "<group>"; };
+		03DCCEE01E3903D5007F2515 /* RxExpect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxExpect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		03DCCEE81E3903D5007F2515 /* RxExpect-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxExpect-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03DCCEF71E3903EE007F2515 /* Info-macOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
+		03DCCF051E390442007F2515 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Checkouts/RxSwift/build/Debug/RxCocoa.framework; sourceTree = "<group>"; };
+		03DCCF061E390442007F2515 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Checkouts/RxSwift/build/Debug/RxSwift.framework; sourceTree = "<group>"; };
+		03DCCF071E390442007F2515 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Checkouts/RxSwift/build/Debug/RxTest.framework; sourceTree = "<group>"; };
+		03DCCF101E39048B007F2515 /* RxExpect-tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "RxExpect-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03DCCF181E39048B007F2515 /* RxExpect-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxExpect-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03DCCF271E39049E007F2515 /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		03DCCF291E3904C4007F2515 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-appletvos/RxCocoa.framework"; sourceTree = "<group>"; };
+		03DCCF2A1E3904C4007F2515 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-appletvos/RxSwift.framework"; sourceTree = "<group>"; };
+		03DCCF2B1E3904C4007F2515 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-appletvos/RxTest.framework"; sourceTree = "<group>"; };
 		03FB83061D592F6B004EF4FB /* RxExpect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxExpect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		03FB83101D592F6B004EF4FB /* RxExpectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxExpectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03FB83101D592F6B004EF4FB /* RxExpect-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxExpect-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03FB83211D59301F004EF4FB /* RxExpect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxExpect.h; sourceTree = "<group>"; };
-		03FB83231D59301F004EF4FB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03FB83231D59301F004EF4FB /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		03FB83251D59301F004EF4FB /* RxAssertionEqualTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAssertionEqualTests.swift; sourceTree = "<group>"; };
 		03FB83291D5930A8004EF4FB /* RxExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxExpectation.swift; sourceTree = "<group>"; };
 		03FB832A1D5930A8004EF4FB /* XCTestCase+RxExpect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+RxExpect.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		03DCCEDC1E3903D5007F2515 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03DCCF081E390442007F2515 /* RxCocoa.framework in Frameworks */,
+				03DCCF091E390442007F2515 /* RxSwift.framework in Frameworks */,
+				03DCCF0A1E390442007F2515 /* RxTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03DCCEE51E3903D5007F2515 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03DCCEE91E3903D5007F2515 /* RxExpect.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03DCCF0C1E39048B007F2515 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03DCCF2C1E3904C4007F2515 /* RxCocoa.framework in Frameworks */,
+				03DCCF2D1E3904C4007F2515 /* RxSwift.framework in Frameworks */,
+				03DCCF2E1E3904C4007F2515 /* RxTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03DCCF151E39048B007F2515 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03DCCF191E39048B007F2515 /* RxExpect-tvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03FB83021D592F6B004EF4FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,6 +175,12 @@
 		03DCCED41E390352007F2515 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03DCCF291E3904C4007F2515 /* RxCocoa.framework */,
+				03DCCF2A1E3904C4007F2515 /* RxSwift.framework */,
+				03DCCF2B1E3904C4007F2515 /* RxTest.framework */,
+				03DCCF051E390442007F2515 /* RxCocoa.framework */,
+				03DCCF061E390442007F2515 /* RxSwift.framework */,
+				03DCCF071E390442007F2515 /* RxTest.framework */,
 				03DCCED51E390352007F2515 /* RxCocoa.framework */,
 				03DCCED61E390352007F2515 /* RxSwift.framework */,
 				03DCCED71E390352007F2515 /* RxTest.framework */,
@@ -103,7 +203,11 @@
 			isa = PBXGroup;
 			children = (
 				03FB83061D592F6B004EF4FB /* RxExpect.framework */,
-				03FB83101D592F6B004EF4FB /* RxExpectTests.xctest */,
+				03FB83101D592F6B004EF4FB /* RxExpect-iOS-Tests.xctest */,
+				03DCCEE01E3903D5007F2515 /* RxExpect.framework */,
+				03DCCEE81E3903D5007F2515 /* RxExpect-macOSTests.xctest */,
+				03DCCF101E39048B007F2515 /* RxExpect-tvOS.framework */,
+				03DCCF181E39048B007F2515 /* RxExpect-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,7 +231,9 @@
 		03FB83221D59301F004EF4FB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				03FB83231D59301F004EF4FB /* Info.plist */,
+				03FB83231D59301F004EF4FB /* Info-iOS.plist */,
+				03DCCEF71E3903EE007F2515 /* Info-macOS.plist */,
+				03DCCF271E39049E007F2515 /* Info-tvOS.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -145,6 +251,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		03DCCEDD1E3903D5007F2515 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03DCCF011E3903F9007F2515 /* RxExpect.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03DCCF0D1E39048B007F2515 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03DCCF2F1E3904C9007F2515 /* RxExpect.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03FB83031D592F6B004EF4FB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,9 +278,81 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		03FB83051D592F6B004EF4FB /* RxExpect */ = {
+		03DCCEDF1E3903D5007F2515 /* RxExpect-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03FB831A1D592F6B004EF4FB /* Build configuration list for PBXNativeTarget "RxExpect" */;
+			buildConfigurationList = 03DCCEF11E3903D5007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-macOS" */;
+			buildPhases = (
+				03DCCEDB1E3903D5007F2515 /* Sources */,
+				03DCCEDC1E3903D5007F2515 /* Frameworks */,
+				03DCCEDD1E3903D5007F2515 /* Headers */,
+				03DCCEDE1E3903D5007F2515 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RxExpect-macOS";
+			productName = "RxExpect-macOS";
+			productReference = 03DCCEE01E3903D5007F2515 /* RxExpect.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		03DCCEE71E3903D5007F2515 /* RxExpect-macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03DCCEF41E3903D5007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-macOSTests" */;
+			buildPhases = (
+				03DCCEE41E3903D5007F2515 /* Sources */,
+				03DCCEE51E3903D5007F2515 /* Frameworks */,
+				03DCCEE61E3903D5007F2515 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03DCCEEB1E3903D5007F2515 /* PBXTargetDependency */,
+			);
+			name = "RxExpect-macOSTests";
+			productName = "RxExpect-macOSTests";
+			productReference = 03DCCEE81E3903D5007F2515 /* RxExpect-macOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		03DCCF0F1E39048B007F2515 /* RxExpect-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03DCCF211E39048B007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-tvOS" */;
+			buildPhases = (
+				03DCCF0B1E39048B007F2515 /* Sources */,
+				03DCCF0C1E39048B007F2515 /* Frameworks */,
+				03DCCF0D1E39048B007F2515 /* Headers */,
+				03DCCF0E1E39048B007F2515 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RxExpect-tvOS";
+			productName = "RxExpect-tvOS";
+			productReference = 03DCCF101E39048B007F2515 /* RxExpect-tvOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		03DCCF171E39048B007F2515 /* RxExpect-tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03DCCF241E39048B007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-tvOSTests" */;
+			buildPhases = (
+				03DCCF141E39048B007F2515 /* Sources */,
+				03DCCF151E39048B007F2515 /* Frameworks */,
+				03DCCF161E39048B007F2515 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03DCCF1B1E39048B007F2515 /* PBXTargetDependency */,
+			);
+			name = "RxExpect-tvOSTests";
+			productName = "RxExpect-tvOSTests";
+			productReference = 03DCCF181E39048B007F2515 /* RxExpect-tvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		03FB83051D592F6B004EF4FB /* RxExpect-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03FB831A1D592F6B004EF4FB /* Build configuration list for PBXNativeTarget "RxExpect-iOS" */;
 			buildPhases = (
 				03FB83011D592F6B004EF4FB /* Sources */,
 				03FB83021D592F6B004EF4FB /* Frameworks */,
@@ -169,14 +363,14 @@
 			);
 			dependencies = (
 			);
-			name = RxExpect;
+			name = "RxExpect-iOS";
 			productName = RxExpect;
 			productReference = 03FB83061D592F6B004EF4FB /* RxExpect.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		03FB830F1D592F6B004EF4FB /* RxExpectTests */ = {
+		03FB830F1D592F6B004EF4FB /* RxExpect-iOS-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03FB831D1D592F6B004EF4FB /* Build configuration list for PBXNativeTarget "RxExpectTests" */;
+			buildConfigurationList = 03FB831D1D592F6B004EF4FB /* Build configuration list for PBXNativeTarget "RxExpect-iOS-Tests" */;
 			buildPhases = (
 				03FB830C1D592F6B004EF4FB /* Sources */,
 				03FB830D1D592F6B004EF4FB /* Frameworks */,
@@ -187,9 +381,9 @@
 			dependencies = (
 				03FB83131D592F6B004EF4FB /* PBXTargetDependency */,
 			);
-			name = RxExpectTests;
+			name = "RxExpect-iOS-Tests";
 			productName = RxExpectTests;
-			productReference = 03FB83101D592F6B004EF4FB /* RxExpectTests.xctest */;
+			productReference = 03FB83101D592F6B004EF4FB /* RxExpect-iOS-Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -198,10 +392,26 @@
 		03FB82FD1D592F6B004EF4FB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Suyeol Jeon";
 				TargetAttributes = {
+					03DCCEDF1E3903D5007F2515 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					03DCCEE71E3903D5007F2515 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					03DCCF0F1E39048B007F2515 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					03DCCF171E39048B007F2515 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
 					03FB83051D592F6B004EF4FB = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
@@ -224,13 +434,45 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				03FB83051D592F6B004EF4FB /* RxExpect */,
-				03FB830F1D592F6B004EF4FB /* RxExpectTests */,
+				03FB83051D592F6B004EF4FB /* RxExpect-iOS */,
+				03FB830F1D592F6B004EF4FB /* RxExpect-iOS-Tests */,
+				03DCCEDF1E3903D5007F2515 /* RxExpect-macOS */,
+				03DCCEE71E3903D5007F2515 /* RxExpect-macOSTests */,
+				03DCCF0F1E39048B007F2515 /* RxExpect-tvOS */,
+				03DCCF171E39048B007F2515 /* RxExpect-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		03DCCEDE1E3903D5007F2515 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03DCCEE61E3903D5007F2515 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03DCCF0E1E39048B007F2515 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03DCCF161E39048B007F2515 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03FB83041D592F6B004EF4FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -248,6 +490,56 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		03DCCEDB1E3903D5007F2515 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03DCCEF91E3903F4007F2515 /* XCTestCase+RxExpect.swift in Sources */,
+				03DCCEFA1E3903F4007F2515 /* RxExpectation.swift in Sources */,
+				03DCCEFB1E3903F4007F2515 /* RxAssertion.swift in Sources */,
+				03DCCEFC1E3903F4007F2515 /* RxAssertion+Equal.swift in Sources */,
+				03DCCEFD1E3903F4007F2515 /* RxAssertion+Empty.swift in Sources */,
+				03DCCEFE1E3903F4007F2515 /* RxAssertion+Contain.swift in Sources */,
+				03DCCEFF1E3903F4007F2515 /* Operators.swift in Sources */,
+				03DCCF001E3903F4007F2515 /* AnyTestTime.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03DCCEE41E3903D5007F2515 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03DCCF021E3903FF007F2515 /* RxAssertionEqualTests.swift in Sources */,
+				03DCCF031E3903FF007F2515 /* RxAssertionEmptyTests.swift in Sources */,
+				03DCCF041E3903FF007F2515 /* RxAssertionContainTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03DCCF0B1E39048B007F2515 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03DCCF331E3904D8007F2515 /* XCTestCase+RxExpect.swift in Sources */,
+				03DCCF341E3904D8007F2515 /* RxExpectation.swift in Sources */,
+				03DCCF351E3904D8007F2515 /* RxAssertion.swift in Sources */,
+				03DCCF361E3904D8007F2515 /* RxAssertion+Equal.swift in Sources */,
+				03DCCF371E3904D8007F2515 /* RxAssertion+Empty.swift in Sources */,
+				03DCCF381E3904D8007F2515 /* RxAssertion+Contain.swift in Sources */,
+				03DCCF391E3904D8007F2515 /* Operators.swift in Sources */,
+				03DCCF3A1E3904D8007F2515 /* AnyTestTime.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03DCCF141E39048B007F2515 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03DCCF301E3904D2007F2515 /* RxAssertionEqualTests.swift in Sources */,
+				03DCCF311E3904D2007F2515 /* RxAssertionEmptyTests.swift in Sources */,
+				03DCCF321E3904D2007F2515 /* RxAssertionContainTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03FB83011D592F6B004EF4FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -276,14 +568,198 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		03DCCEEB1E3903D5007F2515 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03DCCEDF1E3903D5007F2515 /* RxExpect-macOS */;
+			targetProxy = 03DCCEEA1E3903D5007F2515 /* PBXContainerItemProxy */;
+		};
+		03DCCF1B1E39048B007F2515 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03DCCF0F1E39048B007F2515 /* RxExpect-tvOS */;
+			targetProxy = 03DCCF1A1E39048B007F2515 /* PBXContainerItemProxy */;
+		};
 		03FB83131D592F6B004EF4FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 03FB83051D592F6B004EF4FB /* RxExpect */;
+			target = 03FB83051D592F6B004EF4FB /* RxExpect-iOS */;
 			targetProxy = 03FB83121D592F6B004EF4FB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		03DCCEF21E3903D5007F2515 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/RxSwift/build/Debug",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-macOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.xoul.RxExpect-macOS";
+				PRODUCT_NAME = RxExpect;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		03DCCEF31E3903D5007F2515 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/RxSwift/build/Debug",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-macOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.xoul.RxExpect-macOS";
+				PRODUCT_NAME = RxExpect;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		03DCCEF51E3903D5007F2515 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-macOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.xoul.RxExpect-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		03DCCEF61E3903D5007F2515 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-macOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.xoul.RxExpect-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		03DCCF221E39048B007F2515 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/RxSwift/build/Debug-appletvos",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.xoul.RxExpect-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Debug;
+		};
+		03DCCF231E39048B007F2515 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/RxSwift/build/Debug-appletvos",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.xoul.RxExpect-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Release;
+		};
+		03DCCF251E39048B007F2515 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-tvOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.xoul.RxExpect-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Debug;
+		};
+		03DCCF261E39048B007F2515 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-tvOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.xoul.RxExpect-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Release;
+		};
 		03FB83181D592F6B004EF4FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -406,7 +882,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Checkouts/RxSwift/build/Debug-iphoneos",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.RxExpect;
@@ -428,7 +904,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Checkouts/RxSwift/build/Debug-iphoneos",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.RxExpect;
@@ -442,7 +918,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-iOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.RxExpectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -454,7 +930,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-iOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.RxExpectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -465,6 +941,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		03DCCEF11E3903D5007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03DCCEF21E3903D5007F2515 /* Debug */,
+				03DCCEF31E3903D5007F2515 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		03DCCEF41E3903D5007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03DCCEF51E3903D5007F2515 /* Debug */,
+				03DCCEF61E3903D5007F2515 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		03DCCF211E39048B007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03DCCF221E39048B007F2515 /* Debug */,
+				03DCCF231E39048B007F2515 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		03DCCF241E39048B007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03DCCF251E39048B007F2515 /* Debug */,
+				03DCCF261E39048B007F2515 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		03FB83001D592F6B004EF4FB /* Build configuration list for PBXProject "RxExpect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -474,7 +982,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03FB831A1D592F6B004EF4FB /* Build configuration list for PBXNativeTarget "RxExpect" */ = {
+		03FB831A1D592F6B004EF4FB /* Build configuration list for PBXNativeTarget "RxExpect-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03FB831B1D592F6B004EF4FB /* Debug */,
@@ -483,7 +991,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03FB831D1D592F6B004EF4FB /* Build configuration list for PBXNativeTarget "RxExpectTests" */ = {
+		03FB831D1D592F6B004EF4FB /* Build configuration list for PBXNativeTarget "RxExpect-iOS-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03FB831E1D592F6B004EF4FB /* Debug */,
