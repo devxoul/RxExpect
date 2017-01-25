@@ -1,15 +1,21 @@
 language: objective-c
 osx_image: xcode8
+sudo: false
 
-cache:
-  - bundler
-  - cocoapods
+env:
+  global:
+    - WORKSPACE="RxExpect.xcworkspace"
+    - IOS_SDK="iphonesimulator10.0"
+    - MACOS_SDK="macosx10.12"
+    - TVOS_SDK="appletvsimulator10.0"
+    - WATCHOS_SDK="watchsimulator3.0"
+  matrix:
+    - SCHEME="RxExpect-iOS"       SDK="$IOS_SDK"
+    - SCHEME="RxExpect-macOS"     SDK="$MACOS_SDK"
+    - SCHEME="RxExpect-tvOS"      SDK="$TVOS_SDK"
 
 install:
-  - bundle install --deployment
-  - bundle exec pod --version
-  - bundle exec pod repo update --silent
-  - bundle exec pod install
+  - carthage checkout --no-use-binaries
 
 script:
-  - xcodebuild -workspace 'RxExpect.xcworkspace' -scheme 'RxExpect' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test | xcpretty -c
+  - xcodebuild clean test -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -configuration Release CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c
