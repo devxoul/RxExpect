@@ -16,7 +16,7 @@
 		03FB83261D59301F004EF4FB /* RxExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FB83211D59301F004EF4FB /* RxExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03FB832B1D5930A8004EF4FB /* RxExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB83291D5930A8004EF4FB /* RxExpectation.swift */; };
 		03FB832C1D5930A8004EF4FB /* XCTestCase+RxExpect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB832A1D5930A8004EF4FB /* XCTestCase+RxExpect.swift */; };
-		03FB832D1D5930EF004EF4FB /* RxExpectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB83251D59301F004EF4FB /* RxExpectTests.swift */; };
+		03FB832D1D5930EF004EF4FB /* RxAssertionEqualityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB83251D59301F004EF4FB /* RxAssertionEqualityTests.swift */; };
 		333D21FF6CEF118853C7F680 /* Pods_RxExpect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1FE3422AEA19D3AFAFD84D /* Pods_RxExpect.framework */; };
 		C619C02C0B2AF56E7C79F721 /* Pods_RxExpect_RxExpectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338FC8712C3AAAE98DAFE74C /* Pods_RxExpect_RxExpectTests.framework */; };
 /* End PBXBuildFile section */
@@ -41,7 +41,7 @@
 		03FB83101D592F6B004EF4FB /* RxExpectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxExpectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03FB83211D59301F004EF4FB /* RxExpect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxExpect.h; sourceTree = "<group>"; };
 		03FB83231D59301F004EF4FB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03FB83251D59301F004EF4FB /* RxExpectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxExpectTests.swift; sourceTree = "<group>"; };
+		03FB83251D59301F004EF4FB /* RxAssertionEqualityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAssertionEqualityTests.swift; sourceTree = "<group>"; };
 		03FB83291D5930A8004EF4FB /* RxExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxExpectation.swift; sourceTree = "<group>"; };
 		03FB832A1D5930A8004EF4FB /* XCTestCase+RxExpect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+RxExpect.swift"; sourceTree = "<group>"; };
 		241A526047A75E30F9059137 /* Pods-RxExpect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxExpect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxExpect/Pods-RxExpect.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		03FB83241D59301F004EF4FB /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				03FB83251D59301F004EF4FB /* RxExpectTests.swift */,
+				03FB83251D59301F004EF4FB /* RxAssertionEqualityTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -352,7 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03FB832D1D5930EF004EF4FB /* RxExpectTests.swift in Sources */,
+				03FB832D1D5930EF004EF4FB /* RxAssertionEqualityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
