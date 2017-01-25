@@ -25,7 +25,7 @@ final class RxAssertionEmptinessTests: XCTestCase {
     RxExpect("it should assert non-emptiness") { test in
       let source = PublishSubject<Int>()
       test.input(source, [next(100, 1)])
-      test.assert(source).isNotEmpty()
+      test.assert(source).not().isEmpty()
     }
   }
 

@@ -73,7 +73,8 @@ class RxAssertionEqualityTests: XCTestCase {
         next(200, NonEquatable(name: "B")),
       ])
       test.assert(source)
-        .notEqual([
+        .not()
+        .equal([
           next(100, NonEquatable(name: "a")),
           next(200, NonEquatable(name: "b"))
         ]) { left, right in
@@ -88,7 +89,8 @@ class RxAssertionEqualityTests: XCTestCase {
         next(200, NonEquatable(name: "B")),
       ])
       test.assert(source)
-        .notEqual([
+        .not()
+        .equal([
           next(200, NonEquatable(name: "A")),
           next(300, NonEquatable(name: "B"))
         ]) { left, right in
@@ -103,7 +105,8 @@ class RxAssertionEqualityTests: XCTestCase {
         next(200, NonEquatable(name: "B")),
       ])
       test.assert(source)
-        .notEqual([
+        .not()
+        .equal([
           NonEquatable(name: "a"),
           NonEquatable(name: "b")
         ]) { left, right in
@@ -144,7 +147,7 @@ class RxAssertionEqualityTests: XCTestCase {
         next(100, "A"),
         next(200, "B"),
       ])
-      test.assert(source).notEqual([
+      test.assert(source).not().equal([
         next(100, "a"),
         next(200, "b"),
       ])
@@ -156,7 +159,7 @@ class RxAssertionEqualityTests: XCTestCase {
         next(100, "A"),
         next(200, "B"),
       ])
-      test.assert(source).notEqual([
+      test.assert(source).not().equal([
         next(200, "A"),
         next(300, "B"),
       ])
@@ -168,7 +171,7 @@ class RxAssertionEqualityTests: XCTestCase {
         next(100, "a"),
         next(200, "b"),
       ])
-      test.assert(source).notEqual(["A", "B"])
+      test.assert(source).not().equal(["A", "B"])
     }
   }
 
@@ -195,7 +198,7 @@ class RxAssertionEqualityTests: XCTestCase {
         next(100, ["A", "B", "C"]),
         next(200, ["D", "E"]),
       ])
-      test.assert(source).notEqual([
+      test.assert(source).not().equal([
         next(100, ["a", "b", "c"]),
         next(200, ["D", "E"]),
       ])
@@ -207,7 +210,7 @@ class RxAssertionEqualityTests: XCTestCase {
         next(100, ["A", "B", "C"]),
         next(200, ["D", "E"]),
       ])
-      test.assert(source).notEqual([
+      test.assert(source).not().equal([
         next(200, ["A", "B", "C"]),
         next(300, ["D", "E"]),
       ])

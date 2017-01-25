@@ -12,10 +12,4 @@ extension RxAssertion {
       return recordedEvents.isEmpty
     }
   }
-
-  public func isNotEmpty(file: StaticString = #file, line: UInt = #line) {
-    self.assert([], file: file, line: line) { expectedEvents, recordedEvents in
-      return !recordedEvents.isEmpty
-    }
-  }
 }

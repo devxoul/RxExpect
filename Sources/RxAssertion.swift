@@ -33,12 +33,14 @@ public struct RxAssertion<O: ObservableConvertibleType> {
 
   var shouldFilterNext: Bool
   var timeRange: Range<TestTime>
+  var isNot: Bool
 
   public init(expectation: RxExpectation, source: O) {
     self.expectation = expectation
     self.source = source
     self.shouldFilterNext = false
     self.timeRange = 0..<TestTime.max
+    self.isNot = false
   }
 }
 
@@ -54,7 +56,7 @@ extension RxAssertion {
 }
 
 
-// MARK: Filtering Time
+// MARK: - Filtering Time
 
 extension RxAssertion {
   public func within(_ timeRange: Range<TestTime>) -> RxAssertion<O> {
@@ -73,13 +75,24 @@ extension RxAssertion {
 }
 
 
+// MARK: - Reversing
+
+extension RxAssertion {
+  public func not() -> RxAssertion<O> {
+    var copy = self
+    copy.isNot = !self.isNot
+    return copy
+  }
+}
+
+
 // MARK: - Assertion
 
 extension RxAssertion {
   typealias AssertionBlock<O: ObservableConvertibleType> = ([Recorded<Event<O.E>>], [Recorded<Event<O.E>>]) -> Bool
 
   func assert(
-  _ expectedEvents: [Recorded<Event<O.E>>],
+    _ expectedEvents: [Recorded<Event<O.E>>],
     file: StaticString = #file,
     line: UInt = #line,
     _ block: @escaping AssertionBlock<O>
@@ -105,7 +118,7 @@ extension RxAssertion {
       let expectedEvents = self.filteredEvents(expectedEvents)
       let recordedEvents = self.filteredEvents(recorder.events)
       let result = block(expectedEvents, recordedEvents)
-      if result {
+      if result || self.isNot {
         XCTAssert(true, file: file, line: line)
       } else {
         let message = self.failureMessage(expectedEvents, recordedEvents)
