@@ -28,7 +28,7 @@ import RxTest
 
 public extension XCTestCase {
 
-  public func RxExpect(_ message: String? = nil, block: @escaping (RxExpectation) -> Void) {
+  public func RxExpect(_ message: String? = #function, block: @escaping (RxExpectation) -> Void) {
     let test = RxExpectation(self, message: message)
     driveOnScheduler(test.scheduler) {
       block(test)
