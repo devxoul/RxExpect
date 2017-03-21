@@ -35,7 +35,7 @@ open class RxExpectation: XCTest {
   let message: String
 
   let scheduler = TestScheduler(initialClock: 0)
-  let disposeBag = DisposeBag()
+  open let disposeBag = DisposeBag()
 
   var deferredInputs: [() -> Void] = []
 
