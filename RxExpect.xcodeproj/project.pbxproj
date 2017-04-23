@@ -35,7 +35,7 @@
 		03DCCF081E390442007F2515 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCF051E390442007F2515 /* RxCocoa.framework */; };
 		03DCCF091E390442007F2515 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCF061E390442007F2515 /* RxSwift.framework */; };
 		03DCCF0A1E390442007F2515 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCF071E390442007F2515 /* RxTest.framework */; };
-		03DCCF191E39048B007F2515 /* RxExpect-tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCF101E39048B007F2515 /* RxExpect-tvOS.framework */; };
+		03DCCF191E39048B007F2515 /* RxExpect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCF101E39048B007F2515 /* RxExpect.framework */; };
 		03DCCF2C1E3904C4007F2515 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCF291E3904C4007F2515 /* RxCocoa.framework */; };
 		03DCCF2D1E3904C4007F2515 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCF2A1E3904C4007F2515 /* RxSwift.framework */; };
 		03DCCF2E1E3904C4007F2515 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCF2B1E3904C4007F2515 /* RxTest.framework */; };
@@ -99,7 +99,7 @@
 		03DCCF051E390442007F2515 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Checkouts/RxSwift/build/Debug/RxCocoa.framework; sourceTree = "<group>"; };
 		03DCCF061E390442007F2515 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Checkouts/RxSwift/build/Debug/RxSwift.framework; sourceTree = "<group>"; };
 		03DCCF071E390442007F2515 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Checkouts/RxSwift/build/Debug/RxTest.framework; sourceTree = "<group>"; };
-		03DCCF101E39048B007F2515 /* RxExpect-tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "RxExpect-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03DCCF101E39048B007F2515 /* RxExpect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxExpect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03DCCF181E39048B007F2515 /* RxExpect-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxExpect-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03DCCF271E39049E007F2515 /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		03DCCF291E3904C4007F2515 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-appletvos/RxCocoa.framework"; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03DCCF191E39048B007F2515 /* RxExpect-tvOS.framework in Frameworks */,
+				03DCCF191E39048B007F2515 /* RxExpect.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +206,7 @@
 				03FB83101D592F6B004EF4FB /* RxExpect-iOS-Tests.xctest */,
 				03DCCEE01E3903D5007F2515 /* RxExpect.framework */,
 				03DCCEE81E3903D5007F2515 /* RxExpect-macOSTests.xctest */,
-				03DCCF101E39048B007F2515 /* RxExpect-tvOS.framework */,
+				03DCCF101E39048B007F2515 /* RxExpect.framework */,
 				03DCCF181E39048B007F2515 /* RxExpect-tvOSTests.xctest */,
 			);
 			name = Products;
@@ -329,7 +329,7 @@
 			);
 			name = "RxExpect-tvOS";
 			productName = "RxExpect-tvOS";
-			productReference = 03DCCF101E39048B007F2515 /* RxExpect-tvOS.framework */;
+			productReference = 03DCCF101E39048B007F2515 /* RxExpect.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		03DCCF171E39048B007F2515 /* RxExpect-tvOSTests */ = {
@@ -606,7 +606,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.xoul.RxExpect-macOS";
-				PRODUCT_NAME = RxExpect;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -634,7 +633,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.xoul.RxExpect-macOS";
-				PRODUCT_NAME = RxExpect;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -693,7 +691,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.xoul.RxExpect-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -720,7 +717,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.xoul.RxExpect-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -810,6 +806,7 @@
 					XCTest,
 					"-weak-lswiftXCTest",
 				);
+				PRODUCT_NAME = RxExpect;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -861,6 +858,7 @@
 					XCTest,
 					"-weak-lswiftXCTest",
 				);
+				PRODUCT_NAME = RxExpect;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -886,7 +884,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.RxExpect;
-				PRODUCT_NAME = RxExpect;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -908,7 +905,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.RxExpect;
-				PRODUCT_NAME = RxExpect;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -948,6 +944,7 @@
 				03DCCEF31E3903D5007F2515 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03DCCEF41E3903D5007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-macOSTests" */ = {
 			isa = XCConfigurationList;
@@ -956,6 +953,7 @@
 				03DCCEF61E3903D5007F2515 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03DCCF211E39048B007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -964,6 +962,7 @@
 				03DCCF231E39048B007F2515 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03DCCF241E39048B007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-tvOSTests" */ = {
 			isa = XCConfigurationList;
@@ -972,6 +971,7 @@
 				03DCCF261E39048B007F2515 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03FB83001D592F6B004EF4FB /* Build configuration list for PBXProject "RxExpect" */ = {
 			isa = XCConfigurationList;
