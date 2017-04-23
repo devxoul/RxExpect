@@ -94,13 +94,13 @@
 		03DCCED61E390352007F2515 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-iphoneos/RxSwift.framework"; sourceTree = "<group>"; };
 		03DCCED71E390352007F2515 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-iphoneos/RxTest.framework"; sourceTree = "<group>"; };
 		03DCCEE01E3903D5007F2515 /* RxExpect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxExpect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		03DCCEE81E3903D5007F2515 /* RxExpect-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxExpect-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03DCCEE81E3903D5007F2515 /* RxExpect-macOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxExpect-macOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03DCCEF71E3903EE007F2515 /* Info-macOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
 		03DCCF051E390442007F2515 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Checkouts/RxSwift/build/Debug/RxCocoa.framework; sourceTree = "<group>"; };
 		03DCCF061E390442007F2515 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Checkouts/RxSwift/build/Debug/RxSwift.framework; sourceTree = "<group>"; };
 		03DCCF071E390442007F2515 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Checkouts/RxSwift/build/Debug/RxTest.framework; sourceTree = "<group>"; };
 		03DCCF101E39048B007F2515 /* RxExpect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxExpect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		03DCCF181E39048B007F2515 /* RxExpect-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxExpect-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03DCCF181E39048B007F2515 /* RxExpect-tvOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxExpect-tvOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03DCCF271E39049E007F2515 /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		03DCCF291E3904C4007F2515 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-appletvos/RxCocoa.framework"; sourceTree = "<group>"; };
 		03DCCF2A1E3904C4007F2515 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-appletvos/RxSwift.framework"; sourceTree = "<group>"; };
@@ -205,9 +205,9 @@
 				03FB83061D592F6B004EF4FB /* RxExpect.framework */,
 				03FB83101D592F6B004EF4FB /* RxExpect-iOS-Tests.xctest */,
 				03DCCEE01E3903D5007F2515 /* RxExpect.framework */,
-				03DCCEE81E3903D5007F2515 /* RxExpect-macOSTests.xctest */,
+				03DCCEE81E3903D5007F2515 /* RxExpect-macOS-Tests.xctest */,
 				03DCCF101E39048B007F2515 /* RxExpect.framework */,
-				03DCCF181E39048B007F2515 /* RxExpect-tvOSTests.xctest */,
+				03DCCF181E39048B007F2515 /* RxExpect-tvOS-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -296,9 +296,9 @@
 			productReference = 03DCCEE01E3903D5007F2515 /* RxExpect.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		03DCCEE71E3903D5007F2515 /* RxExpect-macOSTests */ = {
+		03DCCEE71E3903D5007F2515 /* RxExpect-macOS-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03DCCEF41E3903D5007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-macOSTests" */;
+			buildConfigurationList = 03DCCEF41E3903D5007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-macOS-Tests" */;
 			buildPhases = (
 				03DCCEE41E3903D5007F2515 /* Sources */,
 				03DCCEE51E3903D5007F2515 /* Frameworks */,
@@ -309,9 +309,9 @@
 			dependencies = (
 				03DCCEEB1E3903D5007F2515 /* PBXTargetDependency */,
 			);
-			name = "RxExpect-macOSTests";
+			name = "RxExpect-macOS-Tests";
 			productName = "RxExpect-macOSTests";
-			productReference = 03DCCEE81E3903D5007F2515 /* RxExpect-macOSTests.xctest */;
+			productReference = 03DCCEE81E3903D5007F2515 /* RxExpect-macOS-Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		03DCCF0F1E39048B007F2515 /* RxExpect-tvOS */ = {
@@ -332,9 +332,9 @@
 			productReference = 03DCCF101E39048B007F2515 /* RxExpect.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		03DCCF171E39048B007F2515 /* RxExpect-tvOSTests */ = {
+		03DCCF171E39048B007F2515 /* RxExpect-tvOS-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03DCCF241E39048B007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-tvOSTests" */;
+			buildConfigurationList = 03DCCF241E39048B007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-tvOS-Tests" */;
 			buildPhases = (
 				03DCCF141E39048B007F2515 /* Sources */,
 				03DCCF151E39048B007F2515 /* Frameworks */,
@@ -345,9 +345,9 @@
 			dependencies = (
 				03DCCF1B1E39048B007F2515 /* PBXTargetDependency */,
 			);
-			name = "RxExpect-tvOSTests";
+			name = "RxExpect-tvOS-Tests";
 			productName = "RxExpect-tvOSTests";
-			productReference = 03DCCF181E39048B007F2515 /* RxExpect-tvOSTests.xctest */;
+			productReference = 03DCCF181E39048B007F2515 /* RxExpect-tvOS-Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		03FB83051D592F6B004EF4FB /* RxExpect-iOS */ = {
@@ -437,9 +437,9 @@
 				03FB83051D592F6B004EF4FB /* RxExpect-iOS */,
 				03FB830F1D592F6B004EF4FB /* RxExpect-iOS-Tests */,
 				03DCCEDF1E3903D5007F2515 /* RxExpect-macOS */,
-				03DCCEE71E3903D5007F2515 /* RxExpect-macOSTests */,
+				03DCCEE71E3903D5007F2515 /* RxExpect-macOS-Tests */,
 				03DCCF0F1E39048B007F2515 /* RxExpect-tvOS */,
-				03DCCF171E39048B007F2515 /* RxExpect-tvOSTests */,
+				03DCCF171E39048B007F2515 /* RxExpect-tvOS-Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -946,7 +946,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03DCCEF41E3903D5007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-macOSTests" */ = {
+		03DCCEF41E3903D5007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-macOS-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03DCCEF51E3903D5007F2515 /* Debug */,
@@ -964,7 +964,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03DCCF241E39048B007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-tvOSTests" */ = {
+		03DCCF241E39048B007F2515 /* Build configuration list for PBXNativeTarget "RxExpect-tvOS-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03DCCF251E39048B007F2515 /* Debug */,
