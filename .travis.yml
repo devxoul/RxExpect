@@ -19,6 +19,7 @@ env:
 
 install:
   - carthage checkout --no-use-binaries
+  - carthage build
 
 script:
   - set -o pipefail && xcodebuild clean test
