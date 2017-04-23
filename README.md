@@ -138,7 +138,7 @@ final class ArticleDetailViewModelTests: RxTestCase {
 $ git clone https://github.com/devxoul/RxExpect
 $ cd RxExpect
 $ carthage checkout --no-use-binaries
-$ open RxExpect.xcworkspace
+$ open RxExpect.xcodeproj
 ```
 
 ## License
