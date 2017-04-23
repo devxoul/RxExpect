@@ -28,12 +28,19 @@
 		0316CDE01EAD316E00D5001E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0316CDDA1EAD316B00D5001E /* RxCocoa.framework */; };
 		0316CDE11EAD316E00D5001E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0316CDDB1EAD316B00D5001E /* RxSwift.framework */; };
 		0316CDE21EAD316E00D5001E /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0316CDDC1EAD316B00D5001E /* RxTest.framework */; };
+		0316CDE71EAD31C200D5001E /* RxAssertionContainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316CDE41EAD31C200D5001E /* RxAssertionContainTests.swift */; };
+		0316CDE81EAD31C200D5001E /* RxAssertionContainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316CDE41EAD31C200D5001E /* RxAssertionContainTests.swift */; };
+		0316CDE91EAD31C200D5001E /* RxAssertionContainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316CDE41EAD31C200D5001E /* RxAssertionContainTests.swift */; };
+		0316CDEA1EAD31C200D5001E /* RxAssertionEmptyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316CDE51EAD31C200D5001E /* RxAssertionEmptyTests.swift */; };
+		0316CDEB1EAD31C200D5001E /* RxAssertionEmptyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316CDE51EAD31C200D5001E /* RxAssertionEmptyTests.swift */; };
+		0316CDEC1EAD31C200D5001E /* RxAssertionEmptyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316CDE51EAD31C200D5001E /* RxAssertionEmptyTests.swift */; };
+		0316CDED1EAD31C200D5001E /* RxAssertionEqualTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316CDE61EAD31C200D5001E /* RxAssertionEqualTests.swift */; };
+		0316CDEE1EAD31C200D5001E /* RxAssertionEqualTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316CDE61EAD31C200D5001E /* RxAssertionEqualTests.swift */; };
+		0316CDEF1EAD31C200D5001E /* RxAssertionEqualTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316CDE61EAD31C200D5001E /* RxAssertionEqualTests.swift */; };
 		0382322B1E2BF96D0022E1CE /* RxAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0382322A1E2BF96D0022E1CE /* RxAssertion.swift */; };
 		03870B4B1E35F239003F4941 /* RxAssertion+Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03870B4A1E35F239003F4941 /* RxAssertion+Equal.swift */; };
 		03870B4D1E35F2B3003F4941 /* RxAssertion+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03870B4C1E35F2B3003F4941 /* RxAssertion+Empty.swift */; };
 		03A34ABE1E38EA6800D183D6 /* RxAssertion+Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A34ABD1E38EA6800D183D6 /* RxAssertion+Contain.swift */; };
-		03A34ABF1E38EA6B00D183D6 /* RxAssertionContainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A34AB91E38EA4C00D183D6 /* RxAssertionContainTests.swift */; };
-		03CDC36E1E38D3C300A5F554 /* RxAssertionEmptyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDC36C1E38D1C800A5F554 /* RxAssertionEmptyTests.swift */; };
 		03DCCEE91E3903D5007F2515 /* RxExpect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCEE01E3903D5007F2515 /* RxExpect.framework */; };
 		03DCCEF91E3903F4007F2515 /* XCTestCase+RxExpect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB832A1D5930A8004EF4FB /* XCTestCase+RxExpect.swift */; };
 		03DCCEFA1E3903F4007F2515 /* RxExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB83291D5930A8004EF4FB /* RxExpectation.swift */; };
@@ -44,14 +51,8 @@
 		03DCCEFF1E3903F4007F2515 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BC4891D6B777F00744138 /* Operators.swift */; };
 		03DCCF001E3903F4007F2515 /* AnyTestTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BC48B1D6B779C00744138 /* AnyTestTime.swift */; };
 		03DCCF011E3903F9007F2515 /* RxExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FB83211D59301F004EF4FB /* RxExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		03DCCF021E3903FF007F2515 /* RxAssertionEqualTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB83251D59301F004EF4FB /* RxAssertionEqualTests.swift */; };
-		03DCCF031E3903FF007F2515 /* RxAssertionEmptyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDC36C1E38D1C800A5F554 /* RxAssertionEmptyTests.swift */; };
-		03DCCF041E3903FF007F2515 /* RxAssertionContainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A34AB91E38EA4C00D183D6 /* RxAssertionContainTests.swift */; };
 		03DCCF191E39048B007F2515 /* RxExpect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DCCF101E39048B007F2515 /* RxExpect.framework */; };
 		03DCCF2F1E3904C9007F2515 /* RxExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FB83211D59301F004EF4FB /* RxExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		03DCCF301E3904D2007F2515 /* RxAssertionEqualTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB83251D59301F004EF4FB /* RxAssertionEqualTests.swift */; };
-		03DCCF311E3904D2007F2515 /* RxAssertionEmptyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CDC36C1E38D1C800A5F554 /* RxAssertionEmptyTests.swift */; };
-		03DCCF321E3904D2007F2515 /* RxAssertionContainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A34AB91E38EA4C00D183D6 /* RxAssertionContainTests.swift */; };
 		03DCCF331E3904D8007F2515 /* XCTestCase+RxExpect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB832A1D5930A8004EF4FB /* XCTestCase+RxExpect.swift */; };
 		03DCCF341E3904D8007F2515 /* RxExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB83291D5930A8004EF4FB /* RxExpectation.swift */; };
 		03DCCF351E3904D8007F2515 /* RxAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0382322A1E2BF96D0022E1CE /* RxAssertion.swift */; };
@@ -63,7 +64,6 @@
 		03FB83261D59301F004EF4FB /* RxExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FB83211D59301F004EF4FB /* RxExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03FB832B1D5930A8004EF4FB /* RxExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB83291D5930A8004EF4FB /* RxExpectation.swift */; };
 		03FB832C1D5930A8004EF4FB /* XCTestCase+RxExpect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB832A1D5930A8004EF4FB /* XCTestCase+RxExpect.swift */; };
-		03FB832D1D5930EF004EF4FB /* RxAssertionEqualTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB83251D59301F004EF4FB /* RxAssertionEqualTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,12 +102,13 @@
 		0316CDDA1EAD316B00D5001E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/tvOS/RxCocoa.framework; sourceTree = "<group>"; };
 		0316CDDB1EAD316B00D5001E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/tvOS/RxSwift.framework; sourceTree = "<group>"; };
 		0316CDDC1EAD316B00D5001E /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/tvOS/RxTest.framework; sourceTree = "<group>"; };
+		0316CDE41EAD31C200D5001E /* RxAssertionContainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAssertionContainTests.swift; sourceTree = "<group>"; };
+		0316CDE51EAD31C200D5001E /* RxAssertionEmptyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAssertionEmptyTests.swift; sourceTree = "<group>"; };
+		0316CDE61EAD31C200D5001E /* RxAssertionEqualTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAssertionEqualTests.swift; sourceTree = "<group>"; };
 		0382322A1E2BF96D0022E1CE /* RxAssertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAssertion.swift; sourceTree = "<group>"; };
 		03870B4A1E35F239003F4941 /* RxAssertion+Equal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxAssertion+Equal.swift"; sourceTree = "<group>"; };
 		03870B4C1E35F2B3003F4941 /* RxAssertion+Empty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxAssertion+Empty.swift"; sourceTree = "<group>"; };
-		03A34AB91E38EA4C00D183D6 /* RxAssertionContainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAssertionContainTests.swift; sourceTree = "<group>"; };
 		03A34ABD1E38EA6800D183D6 /* RxAssertion+Contain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxAssertion+Contain.swift"; sourceTree = "<group>"; };
-		03CDC36C1E38D1C800A5F554 /* RxAssertionEmptyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAssertionEmptyTests.swift; sourceTree = "<group>"; };
 		03DCCED51E390352007F2515 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-iphoneos/RxCocoa.framework"; sourceTree = "<group>"; };
 		03DCCED61E390352007F2515 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-iphoneos/RxSwift.framework"; sourceTree = "<group>"; };
 		03DCCED71E390352007F2515 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-iphoneos/RxTest.framework"; sourceTree = "<group>"; };
@@ -127,7 +128,6 @@
 		03FB83101D592F6B004EF4FB /* RxExpect-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxExpect-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03FB83211D59301F004EF4FB /* RxExpect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxExpect.h; sourceTree = "<group>"; };
 		03FB83231D59301F004EF4FB /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
-		03FB83251D59301F004EF4FB /* RxAssertionEqualTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAssertionEqualTests.swift; sourceTree = "<group>"; };
 		03FB83291D5930A8004EF4FB /* RxExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxExpectation.swift; sourceTree = "<group>"; };
 		03FB832A1D5930A8004EF4FB /* XCTestCase+RxExpect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+RxExpect.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +199,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0316CDE31EAD31C200D5001E /* RxExpectTests */ = {
+			isa = PBXGroup;
+			children = (
+				0316CDE41EAD31C200D5001E /* RxAssertionContainTests.swift */,
+				0316CDE51EAD31C200D5001E /* RxAssertionEmptyTests.swift */,
+				0316CDE61EAD31C200D5001E /* RxAssertionEqualTests.swift */,
+			);
+			path = RxExpectTests;
+			sourceTree = "<group>";
+		};
 		03DCCED41E390352007F2515 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,9 +287,7 @@
 		03FB83241D59301F004EF4FB /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				03FB83251D59301F004EF4FB /* RxAssertionEqualTests.swift */,
-				03CDC36C1E38D1C800A5F554 /* RxAssertionEmptyTests.swift */,
-				03A34AB91E38EA4C00D183D6 /* RxAssertionContainTests.swift */,
+				0316CDE31EAD31C200D5001E /* RxExpectTests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -545,9 +553,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03DCCF021E3903FF007F2515 /* RxAssertionEqualTests.swift in Sources */,
-				03DCCF031E3903FF007F2515 /* RxAssertionEmptyTests.swift in Sources */,
-				03DCCF041E3903FF007F2515 /* RxAssertionContainTests.swift in Sources */,
+				0316CDEB1EAD31C200D5001E /* RxAssertionEmptyTests.swift in Sources */,
+				0316CDE81EAD31C200D5001E /* RxAssertionContainTests.swift in Sources */,
+				0316CDEE1EAD31C200D5001E /* RxAssertionEqualTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,9 +578,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03DCCF301E3904D2007F2515 /* RxAssertionEqualTests.swift in Sources */,
-				03DCCF311E3904D2007F2515 /* RxAssertionEmptyTests.swift in Sources */,
-				03DCCF321E3904D2007F2515 /* RxAssertionContainTests.swift in Sources */,
+				0316CDEC1EAD31C200D5001E /* RxAssertionEmptyTests.swift in Sources */,
+				0316CDE91EAD31C200D5001E /* RxAssertionContainTests.swift in Sources */,
+				0316CDEF1EAD31C200D5001E /* RxAssertionEqualTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,9 +603,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03FB832D1D5930EF004EF4FB /* RxAssertionEqualTests.swift in Sources */,
-				03CDC36E1E38D3C300A5F554 /* RxAssertionEmptyTests.swift in Sources */,
-				03A34ABF1E38EA6B00D183D6 /* RxAssertionContainTests.swift in Sources */,
+				0316CDEA1EAD31C200D5001E /* RxAssertionEmptyTests.swift in Sources */,
+				0316CDE71EAD31C200D5001E /* RxAssertionContainTests.swift in Sources */,
+				0316CDED1EAD31C200D5001E /* RxAssertionEqualTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
