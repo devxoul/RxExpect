@@ -4,18 +4,27 @@ sudo: false
 
 env:
   global:
-    - WORKSPACE="RxExpect.xcworkspace"
-    - IOS_SDK="iphonesimulator10.0"
+    - PROJECT="RxExpect.xcodeproj"
+    - IOS_SDK="iphonesimulator10.3" 
+    - IOS_DESTINATION="platform=iOS Simulator,name=iPhone 7,OS=10.3"
     - MACOS_SDK="macosx10.12"
-    - TVOS_SDK="appletvsimulator10.0"
+    - MACOS_DESTINATION="arch=x86_64"
+    - TVOS_SDK="appletvsimulator10.2"
+    - TVOS_DESTINATION="platform=tvOS Simulator,name=Apple TV 1080p,OS=10.2"
     - WATCHOS_SDK="watchsimulator3.0"
   matrix:
-    - SCHEME="RxExpect-iOS"       SDK="$IOS_SDK"
-    - SCHEME="RxExpect-macOS"     SDK="$MACOS_SDK"
-    - SCHEME="RxExpect-tvOS"      SDK="$TVOS_SDK"
+    - SCHEME="RxExpect-iOS"       SDK="$IOS_SDK"      DESTINATION="$IOS_DESTINATION"
+    - SCHEME="RxExpect-macOS"     SDK="$MACOS_SDK"    DESTINATION="$MACOS_DESTINATION"
+    - SCHEME="RxExpect-tvOS"      SDK="$TVOS_SDK"     DESTINATION="$TVOS_DESTINATION"
 
 install:
   - carthage checkout --no-use-binaries
 
 script:
-  - xcodebuild clean test -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -configuration Release CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c
+  - set -o pipefail && xcodebuild clean test
+    -project "$PROJECT"
+    -scheme "$SCHEME"
+    -sdk "$SDK"
+    -destination "$DESTINATION"
+    -configuration Release
+    CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c
