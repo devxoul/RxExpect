@@ -37,6 +37,9 @@
 		0316CDED1EAD31C200D5001E /* RxAssertionEqualTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316CDE61EAD31C200D5001E /* RxAssertionEqualTests.swift */; };
 		0316CDEE1EAD31C200D5001E /* RxAssertionEqualTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316CDE61EAD31C200D5001E /* RxAssertionEqualTests.swift */; };
 		0316CDEF1EAD31C200D5001E /* RxAssertionEqualTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316CDE61EAD31C200D5001E /* RxAssertionEqualTests.swift */; };
+		0316CDF11EAD44C100D5001E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0316CDF01EAD44C100D5001E /* XCTest.framework */; };
+		0316CDF31EAD44CD00D5001E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0316CDF21EAD44CD00D5001E /* XCTest.framework */; };
+		0316CDF51EAD44D200D5001E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0316CDF41EAD44D200D5001E /* XCTest.framework */; };
 		0382322B1E2BF96D0022E1CE /* RxAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0382322A1E2BF96D0022E1CE /* RxAssertion.swift */; };
 		03870B4B1E35F239003F4941 /* RxAssertion+Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03870B4A1E35F239003F4941 /* RxAssertion+Equal.swift */; };
 		03870B4D1E35F2B3003F4941 /* RxAssertion+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03870B4C1E35F2B3003F4941 /* RxAssertion+Empty.swift */; };
@@ -105,6 +108,9 @@
 		0316CDE41EAD31C200D5001E /* RxAssertionContainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAssertionContainTests.swift; sourceTree = "<group>"; };
 		0316CDE51EAD31C200D5001E /* RxAssertionEmptyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAssertionEmptyTests.swift; sourceTree = "<group>"; };
 		0316CDE61EAD31C200D5001E /* RxAssertionEqualTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAssertionEqualTests.swift; sourceTree = "<group>"; };
+		0316CDF01EAD44C100D5001E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		0316CDF21EAD44CD00D5001E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		0316CDF41EAD44D200D5001E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/AppleTVOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0382322A1E2BF96D0022E1CE /* RxAssertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAssertion.swift; sourceTree = "<group>"; };
 		03870B4A1E35F239003F4941 /* RxAssertion+Equal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxAssertion+Equal.swift"; sourceTree = "<group>"; };
 		03870B4C1E35F2B3003F4941 /* RxAssertion+Empty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxAssertion+Empty.swift"; sourceTree = "<group>"; };
@@ -137,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0316CDF31EAD44CD00D5001E /* XCTest.framework in Frameworks */,
 				0316CDD41EAD316000D5001E /* RxCocoa.framework in Frameworks */,
 				0316CDD51EAD316000D5001E /* RxSwift.framework in Frameworks */,
 				0316CDD61EAD316000D5001E /* RxTest.framework in Frameworks */,
@@ -158,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0316CDF51EAD44D200D5001E /* XCTest.framework in Frameworks */,
 				0316CDDD1EAD316B00D5001E /* RxCocoa.framework in Frameworks */,
 				0316CDDE1EAD316B00D5001E /* RxSwift.framework in Frameworks */,
 				0316CDDF1EAD316B00D5001E /* RxTest.framework in Frameworks */,
@@ -179,6 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0316CDF11EAD44C100D5001E /* XCTest.framework in Frameworks */,
 				0316CDCB1EAD315700D5001E /* RxCocoa.framework in Frameworks */,
 				0316CDCC1EAD315700D5001E /* RxSwift.framework in Frameworks */,
 				0316CDCD1EAD315700D5001E /* RxTest.framework in Frameworks */,
@@ -212,6 +221,9 @@
 		03DCCED41E390352007F2515 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0316CDF41EAD44D200D5001E /* XCTest.framework */,
+				0316CDF21EAD44CD00D5001E /* XCTest.framework */,
+				0316CDF01EAD44C100D5001E /* XCTest.framework */,
 				0316CDDA1EAD316B00D5001E /* RxCocoa.framework */,
 				0316CDDB1EAD316B00D5001E /* RxSwift.framework */,
 				0316CDDC1EAD316B00D5001E /* RxTest.framework */,
@@ -642,7 +654,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/RxSwift/build/Debug",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
@@ -670,7 +681,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/RxSwift/build/Debug",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
@@ -739,7 +749,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/RxSwift/build/Debug-appletvos",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-tvOS.plist";
@@ -766,7 +775,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/RxSwift/build/Debug-appletvos",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-tvOS.plist";
@@ -844,6 +852,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
@@ -903,6 +912,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
@@ -942,7 +952,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/RxSwift/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-iOS.plist";
@@ -964,7 +973,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/RxSwift/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-iOS.plist";
