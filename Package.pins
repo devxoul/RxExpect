@@ -1,0 +1,12 @@
+{
+  "autoPin": true,
+  "pins": [
+    {
+      "package": "RxSwift",
+      "reason": null,
+      "repositoryURL": "https://github.com/devxoul/RxSwift.git",
+      "version": "3.4.1"
+    }
+  ],
+  "version": 1
+}
