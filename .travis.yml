@@ -1,27 +1,8 @@
-language: objective-c
 osx_image: xcode8.3
-sudo: false
-
-env:
-  global:
-    - PROJECT="RxExpect.xcodeproj"
-    - IOS_SDK="iphonesimulator10.3" 
-    - IOS_DESTINATION="platform=iOS Simulator,name=iPhone 7,OS=10.3"
-    - MACOS_SDK="macosx10.12"
-    - MACOS_DESTINATION="arch=x86_64"
-  matrix:
-    - SCHEME="RxExpect-iOS"       SDK="$IOS_SDK"      DESTINATION="$IOS_DESTINATION"
-    - SCHEME="RxExpect-macOS"     SDK="$MACOS_SDK"    DESTINATION="$MACOS_DESTINATION"
-
+language: objective-c
+sudo: required
 install:
-  - carthage checkout --no-use-binaries
-  - carthage build
-
+  - eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh)"
+  - swift --version
 script:
-  - set -o pipefail && xcodebuild clean test
-    -project "$PROJECT"
-    -scheme "$SCHEME"
-    -sdk "$SDK"
-    -destination "$DESTINATION"
-    -configuration Release
-    CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c
+  - swift test
