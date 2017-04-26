@@ -60,7 +60,7 @@ extension RxExpectation {
     self.deferredInputs.append { [unowned self] in
       self.scheduler
         .createHotObservable(events)
-        .bindTo(observer)
+        .bind(to: observer)
         .addDisposableTo(self.disposeBag)
     }
   }
@@ -70,7 +70,7 @@ extension RxExpectation {
     self.deferredInputs.append { [unowned self] in
       self.scheduler
         .createHotObservable(events)
-        .bindTo(variable)
+        .bind(to: variable)
         .addDisposableTo(self.disposeBag)
     }
   }
