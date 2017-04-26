@@ -3,10 +3,7 @@
 build
 /.build
 /Packages
-
-**/xcuserdata
-*.pbxuser
-*.mode1v3
+/*.xcodeproj
 
 Pods
 Carthage
