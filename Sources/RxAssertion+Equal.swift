@@ -6,6 +6,8 @@
 //  Copyright © 2017 Suyeol Jeon. All rights reserved.
 //
 
+import class Foundation.NSError
+
 import RxCocoa
 import RxSwift
 import RxTest
