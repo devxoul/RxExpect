@@ -89,6 +89,7 @@ final class ArticleDetailViewModelTests: RxTestCase {
 ## Examples
 
 * [RxTodo](https://github.com/devxoul/RxTodo/tree/master/RxTodoTests/Sources/Tests)
+* [Drrrible](https://github.com/devxoul/Drrrible/tree/master/DrrribleTests/Sources)
 
 ## APIs
 
