@@ -28,6 +28,7 @@ import RxTest
 
 public struct RxAssertion<O: ObservableConvertibleType> {
   unowned let expectation: RxExpectation
+  let asserter: Asserter
   let source: O
   var currentScheduler: TestScheduler?
 
@@ -35,8 +36,9 @@ public struct RxAssertion<O: ObservableConvertibleType> {
   var timeRange: Range<TestTime>
   var isNot: Bool
 
-  public init(expectation: RxExpectation, source: O) {
+  public init(expectation: RxExpectation, source: O, asserter: Asserter) {
     self.expectation = expectation
+    self.asserter = asserter
     self.source = source
     self.shouldFilterNext = false
     self.timeRange = 0..<TestTime.max
@@ -114,15 +116,15 @@ extension RxAssertion {
     self.expectation.scheduler.start()
 
     self.expectation.testCase.waitForExpectations(timeout: 0.5) { error in
-      XCTAssertNil(error)
+      self.asserter.assert(error == nil)
       let expectedEvents = self.filteredEvents(expectedEvents)
       let recordedEvents = self.filteredEvents(recorder.events)
       let result = block(expectedEvents, recordedEvents)
       if result || self.isNot {
-        XCTAssert(true, file: file, line: line)
+        self.asserter.assert(true, file: file, line: line)
       } else {
         let message = self.failureMessage(expectedEvents, recordedEvents)
-        XCTAssert(false, message, file: file, line: line)
+        self.asserter.assert(false, message, file: file, line: line)
       }
     }
   }

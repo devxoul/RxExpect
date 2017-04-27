@@ -33,6 +33,7 @@ open class RxExpectation: XCTest {
 
   unowned let testCase: XCTestCase
   let message: String
+  public var asserter: Asserter = Asserter(method: XCTAssert)
 
   let scheduler = TestScheduler(initialClock: 0)
   open let disposeBag = DisposeBag()
@@ -45,7 +46,7 @@ open class RxExpectation: XCTest {
   }
 
   open func assert<O: ObservableConvertibleType>(_ source: O) -> RxAssertion<O> {
-    return RxAssertion(expectation: self, source: source)
+    return RxAssertion(expectation: self, source: source, asserter: self.asserter)
   }
 
 }
