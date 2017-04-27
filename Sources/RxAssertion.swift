@@ -120,7 +120,7 @@ extension RxAssertion {
       let expectedEvents = self.filteredEvents(expectedEvents)
       let recordedEvents = self.filteredEvents(recorder.events)
       let result = block(expectedEvents, recordedEvents)
-      if result || self.isNot {
+      if (result && !self.isNot) || (!result && self.isNot) {
         self.asserter.assert(true, file: file, line: line)
       } else {
         let message = self.failureMessage(expectedEvents, recordedEvents)
