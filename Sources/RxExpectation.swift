@@ -35,7 +35,7 @@ open class RxExpectation: XCTest {
   let message: String
   public var asserter: Asserter = Asserter(method: XCTAssert)
 
-  let scheduler = TestScheduler(initialClock: 0)
+  open let scheduler = TestScheduler(initialClock: 0)
   open let disposeBag = DisposeBag()
 
   var deferredInputs: [() -> Void] = []
