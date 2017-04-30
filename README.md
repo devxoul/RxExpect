@@ -2,9 +2,9 @@ RxExpect
 ========
 
 ![Swift](https://img.shields.io/badge/Swift-3.1-orange.svg)
-[![Build Status](https://travis-ci.org/devxoul/RxExpect.svg?branch=master)](https://travis-ci.org/devxoul/RxExpect)
 [![CocoaPods](http://img.shields.io/cocoapods/v/RxExpect.svg)](https://cocoapods.org/pods/RxExpect)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build Status](https://travis-ci.org/devxoul/RxExpect.svg?branch=master)](https://travis-ci.org/devxoul/RxExpect)
+[![Codecov](https://img.shields.io/codecov/c/github/devxoul/RxExpect.svg)](https://codecov.io/gh/devxoul/RxExpect/)
 
 RxExpect is a testing framework for RxSwift.
 
