@@ -6,6 +6,6 @@ let package = Package(
   name: "RxExpect",
   dependencies: [
     // temporary url for RxTest support
-    .Package(url: "https://github.com/devxoul/RxSwift.git", Version(3, 4, 1)),
+    .Package(url: "https://github.com/devxoul/RxSwift.git", majorVersion: 3),
   ]
 )
