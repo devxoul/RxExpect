@@ -26,7 +26,7 @@ import RxCocoa
 import RxSwift
 import RxTest
 
-public struct RxAssertion<O: ObservableConvertibleType> {
+public class RxAssertion<O: ObservableConvertibleType> {
   unowned let expectation: RxExpectation
   let asserter: Asserter
   let source: O
@@ -51,9 +51,8 @@ public struct RxAssertion<O: ObservableConvertibleType> {
 
 extension RxAssertion {
   public func filterNext() -> RxAssertion<O> {
-    var copy = self
-    copy.shouldFilterNext = true
-    return copy
+    self.shouldFilterNext = true
+    return self
   }
 }
 
@@ -62,9 +61,8 @@ extension RxAssertion {
 
 extension RxAssertion {
   public func within(_ timeRange: Range<TestTime>) -> RxAssertion<O> {
-    var copy = self
-    copy.timeRange = timeRange
-    return copy
+    self.timeRange = timeRange
+    return self
   }
 
   public func since(_ timeSince: TestTime) -> RxAssertion<O> {
@@ -81,9 +79,8 @@ extension RxAssertion {
 
 extension RxAssertion {
   public func not() -> RxAssertion<O> {
-    var copy = self
-    copy.isNot = !self.isNot
-    return copy
+    self.isNot = !self.isNot
+    return self
   }
 }
 
