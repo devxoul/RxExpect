@@ -8,8 +8,13 @@
 
 extension RxAssertion {
   public func isEmpty(file: StaticString = #file, line: UInt = #line) {
-    self.assert([], file: file, line: line) { expectedEvents, recordedEvents in
-      return recordedEvents.isEmpty
-    }
+    self.prepare(
+      expectedEvents: [],
+      assertionBlock: { expectedEvents, recordedEvents in
+        return recordedEvents.isEmpty
+      },
+      file: file,
+      line: line
+    )
   }
 }
