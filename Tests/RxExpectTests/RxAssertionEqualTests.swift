@@ -34,8 +34,7 @@ class RxAssertionEqualTests: XCTestCase {
   // MARK: Equality Assertion (Non Equatable)
 
   func testAssertEqualOfNonEquatables() {
-    RxExpect("it should assert equality of non equatable events") { test in
-      let result = watch(test)
+    RxExpect("it should assert equality of non equatable events", run: false) { test in
       let source = PublishSubject<NonEquatable>()
       test.input(source, [
         next(100, NonEquatable(name: "A")),
@@ -48,16 +47,6 @@ class RxAssertionEqualTests: XCTestCase {
         ]) { left, right in
           return left.name == right.name
         }
-      XCTAssertTrue(result.isPassed)
-    }
-
-    RxExpect("it should assert fail equality of non equatable events") { test in
-      let result = watch(test)
-      let source = PublishSubject<NonEquatable>()
-      test.input(source, [
-        next(100, NonEquatable(name: "A")),
-        next(200, NonEquatable(name: "B")),
-      ])
       test.assert(source)
         .equal([
           next(100, NonEquatable(name: "C")),
@@ -65,11 +54,10 @@ class RxAssertionEqualTests: XCTestCase {
         ]) { left, right in
           return left.name == right.name
         }
-      XCTAssertFalse(result.isPassed)
+      test.run { XCTAssertEqual($0, [true, false]) }
     }
 
-    RxExpect("it should assert equality of non equatable elements") { test in
-      let result = watch(test)
+    RxExpect("it should assert equality of non equatable elements", run: false) { test in
       let source = PublishSubject<NonEquatable>()
       test.input(source, [
         next(100, NonEquatable(name: "A")),
@@ -82,16 +70,6 @@ class RxAssertionEqualTests: XCTestCase {
         ]) { left, right in
           return left.name == right.name
         }
-      XCTAssertTrue(result.isPassed)
-    }
-
-    RxExpect("it should assert fail equality of non equatable elements") { test in
-      let result = watch(test)
-      let source = PublishSubject<NonEquatable>()
-      test.input(source, [
-        next(100, NonEquatable(name: "A")),
-        next(200, NonEquatable(name: "B")),
-      ])
       test.assert(source)
         .equal([
           NonEquatable(name: "C"),
@@ -99,13 +77,12 @@ class RxAssertionEqualTests: XCTestCase {
         ]) { left, right in
           return left.name == right.name
         }
-      XCTAssertFalse(result.isPassed)
+      test.run { XCTAssertEqual($0, [true, false]) }
     }
   }
 
   func testAssertNotEqualOfNonEquatables() {
-    RxExpect("it should assert inequality of non equatable events with different element") { test in
-      let result = watch(test)
+    RxExpect("it should assert inequality of non equatable events with different element", run: false) { test in
       let source = PublishSubject<NonEquatable>()
       test.input(source, [
         next(100, NonEquatable(name: "A")),
@@ -119,16 +96,6 @@ class RxAssertionEqualTests: XCTestCase {
         ]) { left, right in
           return left.name == right.name
         }
-      XCTAssertTrue(result.isPassed)
-    }
-
-    RxExpect("it should assert inequality of non equatable events with different element") { test in
-      let result = watch(test)
-      let source = PublishSubject<NonEquatable>()
-      test.input(source, [
-        next(100, NonEquatable(name: "A")),
-        next(200, NonEquatable(name: "B")),
-      ])
       test.assert(source)
         .not()
         .equal([
@@ -137,11 +104,10 @@ class RxAssertionEqualTests: XCTestCase {
         ]) { left, right in
           return left.name == right.name
         }
-      XCTAssertFalse(result.isPassed)
+      test.run { XCTAssertEqual($0, [true, false]) }
     }
 
-    RxExpect("it should assert inequality of non equatable events with different time") { test in
-      let result = watch(test)
+    RxExpect("it should assert inequality of non equatable events with different time", run: false) { test in
       let source = PublishSubject<NonEquatable>()
       test.input(source, [
         next(100, NonEquatable(name: "A")),
@@ -155,16 +121,6 @@ class RxAssertionEqualTests: XCTestCase {
         ]) { left, right in
           return left.name == right.name
         }
-      XCTAssertTrue(result.isPassed)
-    }
-
-    RxExpect("it should assert fail inequality of non equatable events with different time") { test in
-      let result = watch(test)
-      let source = PublishSubject<NonEquatable>()
-      test.input(source, [
-        next(100, NonEquatable(name: "A")),
-        next(200, NonEquatable(name: "B")),
-      ])
       test.assert(source)
         .not()
         .equal([
@@ -173,11 +129,10 @@ class RxAssertionEqualTests: XCTestCase {
         ]) { left, right in
           return left.name == right.name
         }
-      XCTAssertFalse(result.isPassed)
+      test.run { XCTAssertEqual($0, [true, false]) }
     }
 
-    RxExpect("it should assert inequality of non equatable elements") { test in
-      let result = watch(test)
+    RxExpect("it should assert inequality of non equatable elements", run: false) { test in
       let source = PublishSubject<NonEquatable>()
       test.input(source, [
         next(100, NonEquatable(name: "A")),
@@ -191,16 +146,6 @@ class RxAssertionEqualTests: XCTestCase {
         ]) { left, right in
           return left.name == right.name
         }
-      XCTAssertTrue(result.isPassed)
-    }
-
-    RxExpect("it should assert inequality of non equatable elements") { test in
-      let result = watch(test)
-      let source = PublishSubject<NonEquatable>()
-      test.input(source, [
-        next(100, NonEquatable(name: "A")),
-        next(200, NonEquatable(name: "B")),
-      ])
       test.assert(source)
         .not()
         .equal([
@@ -209,15 +154,14 @@ class RxAssertionEqualTests: XCTestCase {
         ]) { left, right in
           return left.name == right.name
         }
-      XCTAssertFalse(result.isPassed)
+      test.run { XCTAssertEqual($0, [true, false]) }
     }
   }
 
   // MARK: Equality Assertion (Equatable)
 
   func testAssertEqualOfEquatables() {
-    RxExpect("it should assert equality of equatable events") { test in
-      let result = watch(test)
+    RxExpect("it should assert equality of equatable events", run: false) { test in
       let source = PublishSubject<String>()
       test.input(source, [
         next(100, "A"),
@@ -227,24 +171,22 @@ class RxAssertionEqualTests: XCTestCase {
         next(100, "A"),
         next(200, "B"),
       ])
-      XCTAssertTrue(result.isPassed)
+      test.run { XCTAssertEqual($0, [true]) }
     }
 
-    RxExpect("it should assert equality of equatable elements") { test in
-      let result = watch(test)
+    RxExpect("it should assert equality of equatable elements", run: false) { test in
       let source = PublishSubject<String>()
       test.input(source, [
         next(100, "A"),
         next(200, "B"),
       ])
       test.assert(source).equal(["A", "B"])
-      XCTAssertTrue(result.isPassed)
+      test.run { XCTAssertEqual($0, [true]) }
     }
   }
 
   func testAssertNotEqualOfEquatables() {
-    RxExpect("it should assert inequality of equatable events with different elements") { test in
-      let result = watch(test)
+    RxExpect("it should assert inequality of equatable events with different elements", run: false) { test in
       let source = PublishSubject<String>()
       test.input(source, [
         next(100, "A"),
@@ -254,11 +196,10 @@ class RxAssertionEqualTests: XCTestCase {
         next(100, "a"),
         next(200, "b"),
       ])
-      XCTAssertTrue(result.isPassed)
+      test.run { XCTAssertEqual($0, [true]) }
     }
 
-    RxExpect("it should assert inequality of equatable events with different time") { test in
-      let result = watch(test)
+    RxExpect("it should assert inequality of equatable events with different time", run: false) { test in
       let source = PublishSubject<String>()
       test.input(source, [
         next(100, "A"),
@@ -268,26 +209,24 @@ class RxAssertionEqualTests: XCTestCase {
         next(200, "A"),
         next(300, "B"),
       ])
-      XCTAssertTrue(result.isPassed)
+      test.run { XCTAssertEqual($0, [true]) }
     }
 
-    RxExpect("it should assert inequality of equatable elements") { test in
-      let result = watch(test)
+    RxExpect("it should assert inequality of equatable elements", run: false) { test in
       let source = PublishSubject<String>()
       test.input(source, [
         next(100, "a"),
         next(200, "b"),
       ])
       test.assert(source).not().equal(["A", "B"])
-      XCTAssertTrue(result.isPassed)
+      test.run { XCTAssertEqual($0, [true]) }
     }
   }
 
   // MARK: Equality Assertion of Sequence Element (Equatable)
 
   func testAssertEqualOfSequence() {
-    RxExpect("it should assert equality of sequence elements of equatables") { test in
-      let result = watch(test)
+    RxExpect("it should assert equality of sequence elements of equatables", run: false) { test in
       let source = PublishSubject<[String]>()
       test.input(source, [
         next(100, ["A", "B", "C"]),
@@ -297,13 +236,12 @@ class RxAssertionEqualTests: XCTestCase {
         next(100, ["A", "B", "C"]),
         next(200, ["D", "E"]),
       ])
-      XCTAssertTrue(result.isPassed)
+      test.run { XCTAssertEqual($0, [true]) }
     }
   }
 
   func testAssertNotEqualOfSequence() {
-    RxExpect("it should assert inequality of sequence elements of equatables with different elements") { test in
-      let result = watch(test)
+    RxExpect("it should assert inequality of sequence elements of equatables with different elements", run: false) { test in
       let source = PublishSubject<[String]>()
       test.input(source, [
         next(100, ["A", "B", "C"]),
@@ -313,11 +251,10 @@ class RxAssertionEqualTests: XCTestCase {
         next(100, ["a", "b", "c"]),
         next(200, ["D", "E"]),
       ])
-      XCTAssertTrue(result.isPassed)
+      test.run { XCTAssertEqual($0, [true]) }
     }
 
-    RxExpect("it should assert inequality of sequence elements of equatables with different time") { test in
-      let result = watch(test)
+    RxExpect("it should assert inequality of sequence elements of equatables with different time", run: false) { test in
       let source = PublishSubject<[String]>()
       test.input(source, [
         next(100, ["A", "B", "C"]),
@@ -327,7 +264,7 @@ class RxAssertionEqualTests: XCTestCase {
         next(200, ["A", "B", "C"]),
         next(300, ["D", "E"]),
       ])
-      XCTAssertTrue(result.isPassed)
+      test.run { XCTAssertEqual($0, [true]) }
     }
   }
 }
