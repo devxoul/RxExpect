@@ -83,9 +83,14 @@ extension RxAssertion {
 
 extension RxAssertion {
   public func equal(_ expectedEvents: [Recorded<Event<O.E>>], file: StaticString = #file, line: UInt = #line, by elementsEqual: @escaping (O.E, O.E) -> Bool) {
-    self.assert(expectedEvents, file: file, line: line) { expectedEvents, recordedEvents in
-      return self.recordedEventsEqual(expectedEvents, recordedEvents, by: elementsEqual)
-    }
+    self.prepare(
+      expectedEvents: expectedEvents,
+      assertionBlock: { expectedEvents, recordedEvents in
+        return self.recordedEventsEqual(expectedEvents, recordedEvents, by: elementsEqual)
+      },
+      file: file,
+      line: line
+    )
   }
 
   public func equal(_ expectedElements: [O.E], file: StaticString = #file, line: UInt = #line, by elementsEqual: @escaping (O.E, O.E) -> Bool) {
@@ -99,9 +104,14 @@ extension RxAssertion {
 
 extension RxAssertion where O.E: Equatable {
   public func equal(_ expectedEvents: [Recorded<Event<O.E>>], file: StaticString = #file, line: UInt = #line) {
-    self.assert(expectedEvents, file: file, line: line) { expectedEvents, recordedEvents in
-      return self.recordedEventsEqual(expectedEvents, recordedEvents)
-    }
+    self.prepare(
+      expectedEvents: expectedEvents,
+      assertionBlock: { expectedEvents, recordedEvents in
+        return self.recordedEventsEqual(expectedEvents, recordedEvents)
+      },
+      file: file,
+      line: line
+    )
   }
 
   public func equal(_ expectedElements: [O.E], file: StaticString = #file, line: UInt = #line) {
@@ -115,9 +125,14 @@ extension RxAssertion where O.E: Equatable {
 
 extension RxAssertion where O.E: Sequence, O.E.Iterator.Element: Equatable {
   public func equal(_ expectedEvents: [Recorded<Event<O.E>>], file: StaticString = #file, line: UInt = #line) {
-    self.assert(expectedEvents, file: file, line: line) { expectedEvents, recordedEvents in
-      return self.recordedEventsEqual(expectedEvents, recordedEvents)
-    }
+    self.prepare(
+      expectedEvents: expectedEvents,
+      assertionBlock: { expectedEvents, recordedEvents in
+        return self.recordedEventsEqual(expectedEvents, recordedEvents)
+      },
+      file: file,
+      line: line
+    )
   }
 
   public func equal(_ expectedElements: [O.E], file: StaticString = #file, line: UInt = #line) {

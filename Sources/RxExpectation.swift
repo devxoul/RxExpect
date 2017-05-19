@@ -33,6 +33,7 @@ open class RxExpectation: XCTest {
 
   unowned let testCase: XCTestCase
   let message: String
+  var assertions: [AnyAssertion] = []
   public var asserter: Asserter = Asserter(method: XCTAssert)
 
   open let scheduler = TestScheduler(initialClock: 0)
@@ -46,7 +47,36 @@ open class RxExpectation: XCTest {
   }
 
   open func assert<O: ObservableConvertibleType>(_ source: O) -> RxAssertion<O> {
-    return RxAssertion(expectation: self, source: source, asserter: self.asserter)
+    let assertion = RxAssertion(source: source)
+    self.assertions.append(assertion)
+    return assertion
+  }
+
+  override open func run() {
+    self.run(completion: nil)
+  }
+
+  open func run(completion: (([AssertionResult]) -> Void)? = nil) {
+    let disposeBag = DisposeBag()
+
+    // prepare recorder and source
+    for assertion in self.assertions {
+      assertion.prepareRecorder(scheduler: self.scheduler, disposeBag: disposeBag)
+    }
+
+    // provide inputs
+    self.provideInputs()
+
+    let expectation = self.testCase.expectation(description: "")
+    let lastTime = self.assertions.map { $0.maximumTime ?? 0 }.max() ?? 0
+    self.scheduler.scheduleAt(lastTime + 100, action: expectation.fulfill)
+    self.scheduler.start()
+
+    self.testCase.waitForExpectations(timeout: 0.5) { error in
+      self.asserter.assert(error == nil)
+      let results = self.assertions.map { $0.assert(message: self.message) }
+      completion?(results)
+    }
   }
 
 }

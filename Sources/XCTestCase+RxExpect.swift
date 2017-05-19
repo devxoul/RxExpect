@@ -28,10 +28,22 @@ import RxTest
 
 public extension XCTestCase {
 
-  public func RxExpect(_ message: String? = #function, block: @escaping (RxExpectation) -> Void) {
+  public func RxExpect(_ message: String? = #function, run: Bool = true, block: @escaping (RxExpectation) -> Void) {
     let test = RxExpectation(self, message: message)
     driveOnScheduler(test.scheduler) {
       block(test)
+    }
+    if run {
+      test.run { results in
+        for result in results {
+          switch result {
+          case let .success(file, line):
+            test.asserter.assert(true, file: file, line: line)
+          case let .failure(message, file, line):
+            test.asserter.assert(false, message, file: file, line: line)
+          }
+        }
+      }
     }
   }
 }

@@ -11,27 +11,42 @@ import RxTest
 
 extension RxAssertion {
   public func contains(file: StaticString = #file, line: UInt = #line, where predicate: @escaping (Recorded<Event<O.E>>) -> Bool) {
-    self.assert([], file: file, line: line) { _, recordedEvents in
-      return recordedEvents.contains(where: predicate)
-    }
+    self.prepare(
+      expectedEvents: [],
+      assertionBlock: { _, recordedEvents in
+        return recordedEvents.contains(where: predicate)
+      },
+      file: file,
+      line: line
+    )
   }
 }
 
 extension RxAssertion where O.E: Equatable {
   public func contains(file: StaticString = #file, line: UInt = #line, _ event: Recorded<Event<O.E>>) {
-    self.assert([], file: file, line: line) { _, recordedEvents in
-      return recordedEvents.contains { recordedEvent in
-        return self.recordedEventsEqual(event, recordedEvent)
-      }
-    }
+    self.prepare(
+      expectedEvents: [],
+      assertionBlock: { _, recordedEvents in
+        return recordedEvents.contains { recordedEvent in
+          return self.recordedEventsEqual(event, recordedEvent)
+        }
+      },
+      file: file,
+      line: line
+    )
   }
 
   public func contains(_ element: O.E, file: StaticString = #file, line: UInt = #line) {
-    self.assert([], file: file, line: line) { _, recordedEvents in
-      return recordedEvents.contains { recordedEvent in
-        let event = Recorded(time: AnyTestTime, value: Event.next(element))
-        return self.recordedEventsEqual(event, recordedEvent)
-      }
-    }
+    self.prepare(
+      expectedEvents: [],
+      assertionBlock: { _, recordedEvents in
+        return recordedEvents.contains { recordedEvent in
+          let event = Recorded(time: AnyTestTime, value: Event.next(element))
+          return self.recordedEventsEqual(event, recordedEvent)
+        }
+      },
+      file: file,
+      line: line
+    )
   }
 }
