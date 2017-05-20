@@ -118,6 +118,7 @@ final class ArticleDetailViewModelTests: RxTestCase {
 * `equal(expectedEvents)`
 * `isEmpty()`
 * `contains()`
+* `count()`
 
 ## Installation
 
