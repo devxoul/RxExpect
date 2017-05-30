@@ -4,8 +4,8 @@
     {
       "package": "RxSwift",
       "reason": null,
-      "repositoryURL": "https://github.com/devxoul/RxSwift.git",
-      "version": "3.4.2"
+      "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
+      "version": "3.4.1"
     }
   ],
   "version": 1

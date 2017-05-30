@@ -5,7 +5,6 @@ import PackageDescription
 let package = Package(
   name: "RxExpect",
   dependencies: [
-    // temporary url for RxTest support
-    .Package(url: "https://github.com/devxoul/RxSwift.git", majorVersion: 3),
+    .Package(url: "https://github.com/ReactiveX/RxSwift.git", majorVersion: 3),
   ]
 )
