@@ -41,6 +41,8 @@ open class RxExpectation: XCTest {
 
   var deferredInputs: [() -> Void] = []
 
+  var didRun: Bool = false
+
   public init(_ testCase: XCTestCase, message: String? = nil) {
     self.testCase = testCase
     self.message = message ?? ""
@@ -57,6 +59,9 @@ open class RxExpectation: XCTest {
   }
 
   open func run(completion: (([AssertionResult]) -> Void)? = nil) {
+    guard !self.didRun else { return }
+    self.didRun = true
+
     let disposeBag = DisposeBag()
 
     // prepare recorder and source
@@ -75,7 +80,18 @@ open class RxExpectation: XCTest {
     self.testCase.waitForExpectations(timeout: 0.5) { error in
       self.asserter.assert(error == nil)
       let results = self.assertions.map { $0.assert(message: self.message) }
-      completion?(results)
+      if let completion = completion {
+        completion(results)
+      } else {
+        for result in results {
+          switch result {
+          case let .success(file, line):
+            self.asserter.assert(true, file: file, line: line)
+          case let .failure(message, file, line):
+            self.asserter.assert(false, message, file: file, line: line)
+          }
+        }
+      }
     }
   }
 

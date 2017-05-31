@@ -34,16 +34,7 @@ public extension XCTestCase {
       block(test)
     }
     if run {
-      test.run { results in
-        for result in results {
-          switch result {
-          case let .success(file, line):
-            test.asserter.assert(true, file: file, line: line)
-          case let .failure(message, file, line):
-            test.asserter.assert(false, message, file: file, line: line)
-          }
-        }
-      }
+      test.run()
     }
   }
 }
