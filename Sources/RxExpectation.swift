@@ -40,12 +40,19 @@ open class RxExpectation: XCTest {
   open let disposeBag = DisposeBag()
 
   var deferredInputs: [() -> Void] = []
+  var retainedObjects: [Any] = []
 
   var didRun: Bool = false
 
   public init(_ testCase: XCTestCase, message: String? = nil) {
     self.testCase = testCase
     self.message = message ?? ""
+  }
+
+  @discardableResult
+  open func retain<T>(_ object: T) -> T {
+    self.retainedObjects.append(object)
+    return object
   }
 
   open func assert<O: ObservableConvertibleType>(_ source: O) -> RxAssertion<O> {

@@ -41,4 +41,41 @@ final class XCTestCaseRxExpectTests: XCTestCase {
       }
     }
   }
+
+  func testRetain() {
+    RxExpect("Test not retain reactor") { test in
+      let reactor = TestReactor()
+      test.input(reactor.action, [
+        next(100, "A"),
+        next(200, "B"),
+        next(300, "C"),
+      ])
+      test.assert(reactor.state).isEmpty()
+      // when the closure ends, `reactor.state` is disposed because `reactor.disposeBag` is released.
+      // then the test will run so `reactor.state` will never emit any elements.
+    }
+
+    RxExpect("Test retain reactor") { test in
+      let reactor = TestReactor()
+      test.retain(reactor)
+      test.input(reactor.action, [
+        next(100, "A"),
+        next(200, "B"),
+        next(300, "C"),
+      ])
+      test.assert(reactor.state).equal(["A", "B", "C"])
+    }
+  }
+}
+
+final class TestReactor {
+  var disposeBag = DisposeBag()
+  let action = PublishSubject<String>()
+  let state: Observable<String>
+
+  init() {
+    let state = action.asObservable().replay(1)
+    state.connect().disposed(by: self.disposeBag)
+    self.state = state
+  }
 }
