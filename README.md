@@ -54,6 +54,7 @@ final class ArticleDetailViewModelTests: RxTestCase {
   func testLikeButtonSelected() {
     RxExpect("like button should become selected when like button tapped") { test in
       let viewModel = ArticleDetailViewModel()
+      test.retain(viewModel) // IMPORTANT: prevent from being disposed while testing
 
       // providing an user input: user tapped like button
       test.input(viewModel.likeButtonDidTap, [
@@ -69,6 +70,7 @@ final class ArticleDetailViewModelTests: RxTestCase {
     
     RxExpect("like button should become unselected when like button tapped") { test in
       let viewModel = ArticleDetailViewModel()
+      test.retain(viewModel) // IMPORTANT: prevent from being disposed while testing
 
       // providing an user input: user tapped like button
       test.input(viewModel.likeButtonDidTap, [
