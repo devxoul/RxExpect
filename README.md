@@ -49,7 +49,7 @@ result --2---4---6---|   // test these values
 This is more complicated example.
 
 ```swift
-final class ArticleDetailViewModelTests: RxTestCase {
+final class ArticleDetailViewModelTests: XCTestCase {
 
   func testLikeButtonSelected() {
     RxExpect("like button should become selected when like button tapped") { test in
