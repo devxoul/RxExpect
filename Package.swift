@@ -1,10 +1,17 @@
-// swift-tools-version:3.1
+// swift-tools-version:4.0
 
 import PackageDescription
 
 let package = Package(
   name: "RxExpect",
+  products: [
+    .library(name: "RxExpect", targets: ["RxExpect"]),
+  ],
   dependencies: [
-    .Package(url: "https://github.com/ReactiveX/RxSwift.git", majorVersion: 3),
+    .package(url: "https://github.com/ReactiveX/RxSwift.git", .branch("rxswift4.0-swift4.0")),
+  ],
+  targets: [
+    .target(name: "RxExpect", dependencies: ["RxSwift", "RxTest"]),
+    .testTarget(name: "RxExpectTests", dependencies: ["RxExpect"])
   ]
 )
