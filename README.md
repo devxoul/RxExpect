@@ -14,26 +14,26 @@ Provide inputs then test outputs. This is an example code that tests `map()` ope
 
 ```swift
 func testMultiply() {
-  RxExpect("it should multiply values by 2") { test in
-    let value = PublishSubject<Int>()
-    let result = value.map { $0 * 2 }
+  let test = RxExpect()
+  let value = PublishSubject<Int>()
+  let result = value.map { $0 * 2 }
 
-    // provide inputs
-    test.input(value, [
-      next(100, 1),
-      next(200, 2),
-      next(300, 3),
+  // provide inputs
+  test.input(value, [
+    next(100, 1),
+    next(200, 2),
+    next(300, 3),
+    completed(400)
+  ])
+  
+  // test output
+  test.assert(result) { events in
+    XCTAssertEqual(events.values, [
+      next(100, 2),
+      next(200, 4),
+      next(300, 6),
       completed(400)
     ])
-    
-    // test output
-    test.assert(result)
-      .equal([
-        next(2),
-        next(4),
-        next(6),
-        completed(400)
-      ])
   }
 }
 ```
@@ -50,41 +50,37 @@ This is more complicated example.
 
 ```swift
 final class ArticleDetailViewModelTests: XCTestCase {
-
   func testLikeButtonSelected() {
-    RxExpect("like button should become selected when like button tapped") { test in
-      let viewModel = ArticleDetailViewModel()
-      test.retain(viewModel) // IMPORTANT: prevent from being disposed while testing
+    let test = RxExpect()
+    let viewModel = ArticleDetailViewModel()
+    test.retain(viewModel) // IMPORTANT: prevent from being disposed while testing
 
-      // providing an user input: user tapped like button
-      test.input(viewModel.likeButtonDidTap, [
-        next(100),
-      ])
+    // providing an user input: user tapped like button
+    test.input(viewModel.likeButtonDidTap, [
+      next(100, Void()),
+    ])
 
-      // test output: like button become selected
-      test.assert(viewModel.isLikeButtonSelected)
-        .filterNext()
-        .since(100)
-        .equal([true])
-    }
-    
-    RxExpect("like button should become unselected when like button tapped") { test in
-      let viewModel = ArticleDetailViewModel()
-      test.retain(viewModel) // IMPORTANT: prevent from being disposed while testing
-
-      // providing an user input: user tapped like button
-      test.input(viewModel.likeButtonDidTap, [
-        next(100),
-      ])
-
-      // test output: like button become selected
-      test.assert(viewModel.isLikeButtonSelected)
-        .filterNext()
-        .since(100)
-        .equal([false])
+    // test output: like button become selected
+    test.assert(viewModel.isLikeButtonSelected) { events in
+      XCTAssertEqual(events.at(100...).elements, [true])
     }
   }
 
+  func testLikeButtonUnselected() {
+    let test = RxExpect()
+    let viewModel = ArticleDetailViewModel()
+    test.retain(viewModel) // IMPORTANT: prevent from being disposed while testing
+
+    // providing an user input: user tapped like button
+    test.input(viewModel.likeButtonDidTap, [
+      next(100, Void()),
+    ])
+
+    // test output: like button become selected
+    test.assert(viewModel.isLikeButtonSelected) { events in
+      XCTAssertEqual(events.at(100...).elements, [false])
+    }
+  }
 }
 ```
 
@@ -102,25 +98,7 @@ final class ArticleDetailViewModelTests: XCTestCase {
 
 #### Start Assertion Chaining
 
-* `assert(source)`
-
-#### Filtering Events
-
-* `filterNext()`
-* `since(timeSince)`
-* `until(timeUntil)`
-* `within(timeRange)`
-
-#### Reversing Result
-
-* `not()`
-
-#### Assertions
-
-* `equal(expectedEvents)`
-* `isEmpty()`
-* `contains()`
-* `count()`
+* `assert(source, closure)`
 
 ## Installation
 
