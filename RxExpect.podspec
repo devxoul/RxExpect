@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author           = { "Suyeol Jeon" => "devxoul@gmail.com" }
   s.source           = { :git => "https://github.com/devxoul/RxExpect.git",
                          :tag => s.version.to_s }
-  s.source_files     = "Sources/*.swift"
+  s.source_files     = "Sources/**/*.swift"
   s.requires_arc     = true
   s.frameworks       = "XCTest"
 
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.10"
   s.tvos.deployment_target = "9.0"
   
-  s.dependency "RxSwift", ">= 3.4"
-  s.dependency "RxCocoa", ">= 3.4"
-  s.dependency "RxTest", ">= 3.4"
+  s.dependency "RxSwift", ">= 4.0.0"
+  s.dependency "RxCocoa", ">= 4.0.0"
+  s.dependency "RxTest", ">= 4.0.0"
 end
