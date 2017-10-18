@@ -71,15 +71,15 @@ final class UtilityTests: XCTestCase {
       next(300, "C"),
       completed(400),
     ]
-    XCTAssertEqual(events.at(200..<400), [
+    XCTAssertEqual(events.in(200..<400), [
       next(200, "B"),
       next(300, "C"),
     ])
-    XCTAssertEqual(events.at(300...), [
+    XCTAssertEqual(events.in(300...), [
       next(300, "C"),
       completed(400),
     ])
-    XCTAssertEqual(events.at(...300), [
+    XCTAssertEqual(events.in(...300), [
       next(100, "A"),
       next(200, "B"),
       next(300, "C"),

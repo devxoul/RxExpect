@@ -52,7 +52,7 @@ public extension Array where Element: RecordedType, Element.ValueType: EventType
     return self.filter { $0.value.is(event) }
   }
 
-  public func at<R>(_ timeRange: R) -> Array<Element> where R: RangeExpression, R.Bound == TestTime {
+  public func `in`<R>(_ timeRange: R) -> Array<Element> where R: RangeExpression, R.Bound == TestTime {
     return self.filter { timeRange.contains($0.time) }
   }
 }
