@@ -66,6 +66,26 @@ final class RxExpectTests: XCTestCase {
     }
   }
 
+  func testAssertMergeOnMainScheduler() {
+    let test = RxExpect()
+    let subjects: [PublishSubject<String>] = [.init(), .init(), .init()]
+    let obsevables = subjects.map { $0.observeOn(MainScheduler.instance) }
+    let observable = Observable<String>.merge(obsevables).observeOn(MainScheduler.instance)
+    test.input(subjects[0], [
+      next(500, "A"),
+    ])
+    test.input(subjects[1], [
+      next(300, "B"),
+    ])
+    test.input(subjects[2], [
+      next(100, "C"),
+      next(600, "D"),
+    ])
+    test.assert(observable) { events in
+      XCTAssertEqual(events.elements, ["C", "B", "A", "D"])
+    }
+  }
+
   func testNotRetain() {
     weak var object: NSObject?
     _ = {

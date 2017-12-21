@@ -72,8 +72,9 @@ open class RxExpect {
     // start scheduler
     self.scheduler.start()
 
-    XCTWaiter().wait(for: [expectation], timeout: 5)
-    expectation.fulfill()
+    // expectation
+    DispatchQueue.main.async { expectation.fulfill() }
+    XCTWaiter().wait(for: [expectation], timeout: 1)
 
     // assert
     for assertion in self.assertions {
