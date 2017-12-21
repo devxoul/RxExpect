@@ -12,7 +12,7 @@ open class RxExpect {
   var retainedObjects: [AnyObject] = []
   var deferredInputs: [(RxExpect) -> Void] = []
   var assertions: [AnyAssertion] = []
-  var maximumTime: TestTime = 0
+  var maximumInputTime: TestTime = 0
 
   public init(file: StaticString = #file, line: UInt = #line) {
     self.file = file
@@ -31,7 +31,7 @@ open class RxExpect {
 
   public func input<O: ObserverType>(_ observer: O, _ events: [Recorded<Event<O.E>>], file: StaticString = #file, line: UInt = #line) {
     Swift.assert(!events.contains { $0.time == AnyTestTime }, "Input events should have specific time.", file: file, line: line)
-    self.maximumTime = ([self.maximumTime] + events.map { $0.time }).max() ?? self.maximumTime
+    self.maximumInputTime = ([self.maximumInputTime] + events.map { $0.time }).max() ?? self.maximumInputTime
     self.deferredInputs.append { `self` in
       self.scheduler
         .createHotObservable(events)
@@ -42,7 +42,7 @@ open class RxExpect {
 
   public func input<E>(_ variable: Variable<E>, _ events: [Recorded<Event<E>>], file: StaticString = #file, line: UInt = #line) {
     Swift.assert(!events.contains { $0.time == AnyTestTime }, "Input events should have specific time.", file: file, line: line)
-    self.maximumTime = ([self.maximumTime] + events.map { $0.time }).max() ?? self.maximumTime
+    self.maximumInputTime = ([self.maximumInputTime] + events.map { $0.time }).max() ?? self.maximumInputTime
     self.deferredInputs.append { `self` in
       self.scheduler
         .createHotObservable(events)
@@ -51,18 +51,17 @@ open class RxExpect {
     }
   }
 
-  open func assert<O: ObservableConvertibleType>(_ source: O, closure: @escaping AssertionClosure<O.E>) {
-    let assertion = Assertion(source: source, closure: closure)
+  open func assert<O: ObservableConvertibleType>(_ source: O, disposed: TestTime? = nil, closure: @escaping AssertionClosure<O.E>) {
+    let assertion = Assertion(source: source, disposeAt: disposed, closure: closure)
     self.assertions.append(assertion)
   }
 
   private func run() {
-    let disposeBag = DisposeBag()
     let expectation = XCTestExpectation()
 
     // prepare recorder and source
     for assertion in self.assertions {
-      assertion.prepareRecorder(scheduler: self.scheduler, disposeBag: disposeBag)
+      assertion.prepareRecorder(scheduler: self.scheduler, disposeAt: assertion.disposeAt)
     }
 
     // provide inputs
@@ -71,10 +70,10 @@ open class RxExpect {
     }
 
     // start scheduler
-    self.scheduler.scheduleAt(self.maximumTime, action: expectation.fulfill)
     self.scheduler.start()
 
     XCTWaiter().wait(for: [expectation], timeout: 5)
+    expectation.fulfill()
 
     // assert
     for assertion in self.assertions {

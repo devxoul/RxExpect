@@ -49,6 +49,23 @@ final class RxExpectTests: XCTestCase {
     }
   }
 
+  func testAssertInfiniteObservable() {
+    let test = RxExpect()
+    let timer = Observable<Int>.interval(100, scheduler: test.scheduler)
+    test.assert(timer, disposed: 400) { events in
+      XCTAssertEqual(events, [
+        next(100, 0),
+        next(200, 1),
+        next(300, 2),
+      ])
+    }
+    test.assert(timer, disposed: 200) { events in
+      XCTAssertEqual(events, [
+        next(100, 0),
+      ])
+    }
+  }
+
   func testNotRetain() {
     weak var object: NSObject?
     _ = {
