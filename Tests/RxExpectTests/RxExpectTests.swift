@@ -69,8 +69,7 @@ final class RxExpectTests: XCTestCase {
   func testAssertMergeOnMainScheduler() {
     let test = RxExpect()
     let subjects: [PublishSubject<String>] = [.init(), .init(), .init()]
-    let obsevables = subjects.map { $0.observeOn(MainScheduler.instance) }
-    let observable = Observable<String>.merge(obsevables).observeOn(MainScheduler.instance)
+    let observable = Observable<String>.merge(subjects).observeOn(MainScheduler.instance)
     test.input(subjects[0], [
       next(500, "A"),
     ])
