@@ -41,11 +41,11 @@ public enum EventFilter {
 
 public extension Array where Element: RecordedType, Element.ValueType: EventType {
   public var elements: [Element.ValueType.ElementType] {
-    return self.flatMap { $0.value.element }
+    return self.compactMap { $0.value.element }
   }
 
   public var error: Error? {
-    return self.lazy.flatMap { $0.value.error }.first
+    return self.lazy.compactMap { $0.value.error }.first
   }
 
   public func filter(_ event: EventFilter) -> Array<Element> {

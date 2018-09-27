@@ -3,8 +3,8 @@ import RxSwift
 import RxTest
 
 open class RxExpect {
-  open let scheduler = TestScheduler(initialClock: 0)
-  open let disposeBag = DisposeBag()
+  public let scheduler = TestScheduler(initialClock: 0)
+  public let disposeBag = DisposeBag()
 
   let file: StaticString
   let line: UInt
