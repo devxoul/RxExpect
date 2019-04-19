@@ -28,7 +28,7 @@ func testMultiply() {
   
   // test output
   test.assert(result) { events in
-    XCTAssertEqual(events.values, [
+    XCTAssertEqual(events, [
       next(100, 2),
       next(200, 4),
       next(300, 6),
