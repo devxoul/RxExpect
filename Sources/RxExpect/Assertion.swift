@@ -13,17 +13,17 @@ public typealias AssertionClosure<E> = ([Recorded<Event<E>>]) -> Void
 open class Assertion<O: ObservableConvertibleType>: AnyAssertion {
   let source: O
   let disposeAt: TestTime?
-  let closure: AssertionClosure<O.E>
-  var recorder: TestableObserver<O.E>?
+  let closure: AssertionClosure<O.Element>
+  var recorder: TestableObserver<O.Element>?
 
-  init(source: O, disposeAt: TestTime?, closure: @escaping AssertionClosure<O.E>) {
+  init(source: O, disposeAt: TestTime?, closure: @escaping AssertionClosure<O.Element>) {
     self.source = source
     self.disposeAt = disposeAt
     self.closure = closure
   }
 
   func prepareRecorder(scheduler: TestScheduler, disposeAt: TestTime?) {
-    let recorder = scheduler.createObserver(O.E.self)
+    let recorder = scheduler.createObserver(O.Element.self)
     self.recorder = recorder
 
     let subscription = self.source.asObservable().subscribe(recorder)

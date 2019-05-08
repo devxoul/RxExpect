@@ -1,8 +1,10 @@
 import RxSwift
 import RxTest
 
-let AnyTestTime = TestTime.min
+public struct AnyTestTime {
+  static let time = TestTime.min
 
-public func next<T>(_ element: T) -> Recorded<Event<T>> {
-  return next(AnyTestTime, element)
+  public static func next<T>(_ element: T) -> Recorded<Event<T>> {
+    return Recorded.next(time, element)
+  }
 }

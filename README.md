@@ -1,7 +1,7 @@
 RxExpect
 ========
 
-![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
 [![CocoaPods](http://img.shields.io/cocoapods/v/RxExpect.svg)](https://cocoapods.org/pods/RxExpect)
 [![Build Status](https://travis-ci.org/devxoul/RxExpect.svg?branch=master)](https://travis-ci.org/devxoul/RxExpect)
 [![Codecov](https://img.shields.io/codecov/c/github/devxoul/RxExpect.svg)](https://codecov.io/gh/devxoul/RxExpect/)
@@ -20,19 +20,19 @@ func testMultiply() {
 
   // provide inputs
   test.input(value, [
-    next(100, 1),
-    next(200, 2),
-    next(300, 3),
-    completed(400)
+    .next(100, 1),
+    .next(200, 2),
+    .next(300, 3),
+    .completed(400)
   ])
-  
+
   // test output
   test.assert(result) { events in
     XCTAssertEqual(events, [
-      next(100, 2),
-      next(200, 4),
-      next(300, 6),
-      completed(400)
+      .next(100, 2),
+      .next(200, 4),
+      .next(300, 6),
+      .completed(400)
     ])
   }
 }
@@ -57,7 +57,7 @@ final class ArticleDetailViewModelTests: XCTestCase {
 
     // providing an user input: user tapped like button
     test.input(viewModel.likeButtonDidTap, [
-      next(100, Void()),
+      .next(100, Void()),
     ])
 
     // test output: like button become selected
@@ -73,7 +73,7 @@ final class ArticleDetailViewModelTests: XCTestCase {
 
     // providing an user input: user tapped like button
     test.input(viewModel.likeButtonDidTap, [
-      next(100, Void()),
+      .next(100, Void()),
     ])
 
     // test output: like button become selected

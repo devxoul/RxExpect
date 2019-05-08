@@ -40,19 +40,19 @@ public enum EventFilter {
 }
 
 public extension Array where Element: RecordedType, Element.ValueType: EventType {
-  public var elements: [Element.ValueType.ElementType] {
+  var elements: [Element.ValueType.ElementType] {
     return self.compactMap { $0.value.element }
   }
 
-  public var error: Error? {
+  var error: Error? {
     return self.lazy.compactMap { $0.value.error }.first
   }
 
-  public func filter(_ event: EventFilter) -> Array<Element> {
+  func filter(_ event: EventFilter) -> Array<Element> {
     return self.filter { $0.value.is(event) }
   }
 
-  public func `in`<R>(_ timeRange: R) -> Array<Element> where R: RangeExpression, R.Bound == TestTime {
+  func `in`<R>(_ timeRange: R) -> Array<Element> where R: RangeExpression, R.Bound == TestTime {
     return self.filter { timeRange.contains($0.time) }
   }
 }
