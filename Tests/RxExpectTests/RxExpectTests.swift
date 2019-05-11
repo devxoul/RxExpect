@@ -1,5 +1,6 @@
 import XCTest
 import RxSwift
+import RxCocoa
 import RxTest
 import RxExpect
 
@@ -45,6 +46,31 @@ final class RxExpectTests: XCTestCase {
         next(300, 1),
         next(400, 2),
         next(500, 3),
+      ])
+    }
+
+    let publishRelay = PublishRelay<String>()
+    test.input(publishRelay, [
+      next(100, "A"),
+      next(200, "B"),
+    ])
+    test.assert(publishRelay) { events in
+      XCTAssertEqual(events, [
+        next(100, "A"),
+        next(200, "B"),
+      ])
+    }
+
+    let behaviorRelay = BehaviorRelay<String>(value: "A")
+    test.input(behaviorRelay, [
+      next(100, "B"),
+      next(200, "C"),
+    ])
+    test.assert(behaviorRelay) { events in
+      XCTAssertEqual(events, [
+        next(0, "A"),
+        next(100, "B"),
+        next(200, "C"),
       ])
     }
   }
