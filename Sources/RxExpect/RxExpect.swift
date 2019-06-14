@@ -29,7 +29,7 @@ open class RxExpect {
     return object
   }
 
-  public func input<O: ObserverType>(_ observer: O, _ events: [Recorded<Event<O.E>>], file: StaticString = #file, line: UInt = #line) {
+  public func input<O: ObserverType>(_ observer: O, _ events: [Recorded<Event<O.Element>>], file: StaticString = #file, line: UInt = #line) {
     Swift.assert(!events.contains { $0.time == AnyTestTime }, "Input events should have specific time.", file: file, line: line)
     self.maximumInputTime = ([self.maximumInputTime] + events.map { $0.time }).max() ?? self.maximumInputTime
     self.deferredInputs.append { `self` in
@@ -51,7 +51,7 @@ open class RxExpect {
     }
   }
 
-  open func assert<O: ObservableConvertibleType>(_ source: O, disposed: TestTime? = nil, closure: @escaping AssertionClosure<O.E>) {
+  open func assert<O: ObservableConvertibleType>(_ source: O, disposed: TestTime? = nil, closure: @escaping AssertionClosure<O.Element>) {
     let assertion = Assertion(source: source, disposeAt: disposed, closure: closure)
     self.assertions.append(assertion)
   }
