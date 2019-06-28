@@ -2,6 +2,7 @@ import XCTest
 import RxSwift
 import RxTest
 import RxExpect
+import RxRelay
 
 final class RxExpectTests: XCTestCase {
   func testAssertionClosureExecutes() {
@@ -33,13 +34,13 @@ final class RxExpectTests: XCTestCase {
       ])
     }
 
-    let variable = Variable<Int>(0)
-    test.input(variable, [
+    let behaviorRelay = BehaviorRelay<Int>(value: 0)
+    test.input(behaviorRelay, [
       .next(300, 1),
       .next(400, 2),
       .next(500, 3),
     ])
-    test.assert(variable.asObservable()) { events in
+    test.assert(behaviorRelay.asObservable()) { events in
       XCTAssertEqual(events, [
         .next(0, 0),
         .next(300, 1),
@@ -83,14 +84,6 @@ final class RxExpectTests: XCTestCase {
     test.assert(observable) { events in
       XCTAssertEqual(events.elements, ["C", "B", "A", "D"])
     }
-  }
-
-  func testNotRetain() {
-    weak var object: NSObject?
-    _ = {
-      object = NSObject()
-    }()
-    XCTAssertNil(object)
   }
 
   func testRetain() {
