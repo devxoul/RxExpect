@@ -32,21 +32,6 @@ final class RxExpectTests: XCTestCase {
         .completed(300),
       ])
     }
-
-    let variable = Variable<Int>(0)
-    test.input(variable, [
-      .next(300, 1),
-      .next(400, 2),
-      .next(500, 3),
-    ])
-    test.assert(variable.asObservable()) { events in
-      XCTAssertEqual(events, [
-        .next(0, 0),
-        .next(300, 1),
-        .next(400, 2),
-        .next(500, 3),
-      ])
-    }
   }
 
   func testAssertInfiniteObservable() {
