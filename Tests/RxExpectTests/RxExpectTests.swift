@@ -1,4 +1,5 @@
 import XCTest
+import RxRelay
 import RxSwift
 import RxTest
 import RxExpect
@@ -30,6 +31,35 @@ final class RxExpectTests: XCTestCase {
         .next(100, "A"),
         .next(200, "B"),
         .completed(300),
+      ])
+    }
+
+    let publishRelay = PublishRelay<Int>()
+    test.input(publishRelay, [
+      .next(300, 1),
+      .next(400, 2),
+      .next(500, 3),
+    ])
+    test.assert(publishRelay.asObservable()) { events in
+      XCTAssertEqual(events, [
+        .next(300, 1),
+        .next(400, 2),
+        .next(500, 3),
+      ])
+    }
+
+    let behaviorRelay = BehaviorRelay<Int>(value: 0)
+    test.input(behaviorRelay, [
+      .next(300, 1),
+      .next(400, 2),
+      .next(500, 3),
+    ])
+    test.assert(behaviorRelay.asObservable()) { events in
+      XCTAssertEqual(events, [
+        .next(0, 0),
+        .next(300, 1),
+        .next(400, 2),
+        .next(500, 3),
       ])
     }
   }
