@@ -1,7 +1,7 @@
 RxExpect
 ========
 
-![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-5.1-orange.svg)
 [![CocoaPods](http://img.shields.io/cocoapods/v/RxExpect.svg)](https://cocoapods.org/pods/RxExpect)
 [![Build Status](https://travis-ci.org/devxoul/RxExpect.svg?branch=master)](https://travis-ci.org/devxoul/RxExpect)
 [![Codecov](https://img.shields.io/codecov/c/github/devxoul/RxExpect.svg)](https://codecov.io/gh/devxoul/RxExpect/)

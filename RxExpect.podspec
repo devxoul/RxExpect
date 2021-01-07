@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.10"
   s.tvos.deployment_target = "9.0"
   
-  s.dependency "RxSwift", "~> 5.0"
-  s.dependency "RxCocoa", "~> 5.0"
-  s.dependency "RxTest", "~> 5.0"
+  s.dependency "RxSwift", "~> 6.0"
+  s.dependency "RxCocoa", "~> 6.0"
+  s.dependency "RxTest", "~> 6.0"
 end
