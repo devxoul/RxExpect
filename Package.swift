@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
   name: "RxExpect",
   platforms: [
-    .iOS(.v8), .macOS(.v10_10), .tvOS(.v9)
+    .iOS(.v9), .macOS(.v10_10), .tvOS(.v9)
   ],
   products: [
     .library(name: "RxExpect", targets: ["RxExpect"]),
